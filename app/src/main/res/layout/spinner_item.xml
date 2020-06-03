@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/x148"
+    android:layout_height="@dimen/y30"
+    android:paddingRight="5dp"
+    android:textColor="@color/white"
+    android:gravity="center"
+    android:singleLine="true"
+    android:background="@mipmap/spinner_bg"
+    android:id="@+id/textView32" />

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_scale"
+    android:layout_width="@dimen/x286"
+    android:layout_height="@dimen/y66"
+    android:background="@mipmap/item_game_bg"
+    android:alpha="0.8"
+    android:focusableInTouchMode="true"
+    android:padding="@dimen/x6">
+
+    <ImageView
+        android:id="@+id/iv_pic"
+        android:layout_width="@dimen/x63"
+        android:layout_height="@dimen/y63"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/x10"
+        android:focusableInTouchMode="true"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iv_pic"
+        android:layout_marginTop="@dimen/y5"
+        android:layout_toRightOf="@+id/iv_pic"
+        android:text="街头霸王"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_title"
+        android:layout_marginTop="@dimen/y6"
+        android:layout_toRightOf="@+id/iv_pic"
+        android:text="001"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:layout_marginTop="@dimen/y4"
+        android:id="@+id/iv_right"
+        android:layout_width="@dimen/x44"
+        android:layout_height="@dimen/y44"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="@dimen/x8"
+        android:background="@mipmap/item_game_right_bg" />
+
+    <ImageView
+
+        android:layout_marginTop="@dimen/y3"
+        android:id="@+id/iv_red_heart"
+        android:layout_width="@dimen/x24"
+        android:layout_height="@dimen/y20"
+        android:layout_marginRight="@dimen/x5"
+        android:layout_toLeftOf="@+id/iv_right"
+        android:background="@mipmap/red_heart" />
+
+    <ImageView
+        android:layout_width="@dimen/x24"
+        android:layout_height="@dimen/y20"
+        android:layout_marginTop="@dimen/y5"
+        android:layout_below="@+id/iv_red_heart"
+        android:layout_marginRight="@dimen/x5"
+        android:layout_toLeftOf="@+id/iv_right"
+        android:background="@mipmap/item_game_cube" />
+</RelativeLayout>

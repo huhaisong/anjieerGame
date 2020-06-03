@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@android:id/background"
+        android:gravity="center_vertical|fill_horizontal">
+        <shape
+            android:shape="rectangle">
+            <solid android:color="#283F6C" />
+            <corners android:radius="@dimen/x11" />
+            <size android:height="@dimen/x60" android:width="@dimen/y60"/>
+        </shape>
+    </item>
+
+    <item
+        android:drawable="@drawable/item_focus"
+        android:gravity="center" >
+        <shape android:shape="rectangle">
+            <solid android:color="#283F6C" />
+            <corners android:radius="@dimen/x11" />
+            <size android:height="@dimen/x63" android:width="@dimen/y63"/>
+        </shape>
+    </item>
+</layer-list>

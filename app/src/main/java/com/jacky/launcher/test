@@ -1,0 +1,144 @@
+02-08 08:44:23.330: I/art(1117): Starting a blocking GC Alloc
+02-08 08:44:23.331: I/art(1117): Starting a blocking GC Alloc
+02-08 08:44:24.083: I/art(1117): Starting a blocking GC Alloc
+02-08 08:44:24.083: I/art(1117): Starting a blocking GC Alloc
+02-08 08:44:24.843: I/art(1117): Starting a blocking GC Alloc
+02-08 08:44:24.843: I/art(1117): Starting a blocking GC Alloc
+02-08 08:44:25.005: V/EventHub(376): /dev/input/event3 got: time=273.190059, type=1, code=28, value=1
+02-08 08:44:25.005: V/EventHub(376): event time 273190059000, now 273190137338
+02-08 08:44:25.005: V/EventHub(376): /dev/input/event3 got: time=273.190059, type=0, code=0, value=0
+02-08 08:44:25.005: V/EventHub(376): event time 273190059000, now 273190137338
+02-08 08:44:25.006: D/WindowManager(376): interceptKeyTq keycode=66 interactive=true keyguardActive=false policyFlags=22000000
+02-08 08:44:25.007: D/WindowManager(376): interceptKeyTi keyCode=66 down=true repeatCount=0 keyguardOn=false mHomePressed=false canceled=falsedeviceid = 0
+02-08 08:44:25.255: V/EventHub(376): /dev/input/event3 got: time=273.440044, type=1, code=28, value=0
+02-08 08:44:25.255: V/EventHub(376): event time 273440044000, now 273440151671
+02-08 08:44:25.255: V/EventHub(376): /dev/input/event3 got: time=273.440044, type=0, code=0, value=0
+02-08 08:44:25.255: V/EventHub(376): event time 273440044000, now 273440151671
+02-08 08:44:25.256: D/WindowManager(376): interceptKeyTq keycode=66 interactive=true keyguardActive=false policyFlags=22000000
+02-08 08:44:25.257: D/WindowManager(376): interceptKeyTi keyCode=66 down=false repeatCount=0 keyguardOn=false mHomePressed=false canceled=falsedeviceid = 0
+02-08 08:44:25.260: I/ActivityManager(376): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.jacky.launcher/.activity.MainActivity (has extras)} from uid 10006 on display 0
+02-08 08:44:25.274: D/AudioHardwareTiny(191): start_output_stream
+02-08 08:44:25.275: D/alsa_route(191): route_info->sound_card 0, route_info->devices 0
+02-08 08:44:25.275: D/alsa_route(191): route_set_controls() set route 0
+02-08 08:44:25.338: D/Surface(376): Surface::final mReqUsage=33
+02-08 08:44:25.385: I/ActivityManager(376): Start proc 1846:com.jacky.launcher/u0a61 for activity com.jacky.launcher/.activity.MainActivity
+02-08 08:44:25.386: I/art(1846): Late-enabling -Xcheck:jni
+02-08 08:44:25.528: I/MMKV(1846): <native-bridge.cpp:101::JNI_OnLoad> current API level = 23
+02-08 08:44:25.529: I/MMKV(1846): <MMKV.cpp:192::initialize> page size:4096
+02-08 08:44:25.529: I/MMKV(1846): <MMKV.cpp:206::initializeMMKV> root dir: /data/user/0/com.jacky.launcher/files/mmkv
+02-08 08:44:25.538: I/art(1846): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.539: I/art(1846): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.543: I/art(1846): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.544: I/art(1846): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.544: I/art(1846): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.544: I/art(1846): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.545: I/art(1846): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.548: I/art(1846): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.548: I/art(1846): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.550: I/art(1846): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.551: I/art(1846): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.552: I/art(1846): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.552: I/art(1846): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.619: E/AndroidRuntime(1846): FATAL EXCEPTION: Thread-251
+02-08 08:44:25.619: E/AndroidRuntime(1846): Process: com.jacky.launcher, PID: 1846
+02-08 08:44:25.619: E/AndroidRuntime(1846): java.lang.NullPointerException: Attempt to get length of null array
+02-08 08:44:25.619: E/AndroidRuntime(1846): 	at java.util.ComparableTimSort.sort(ComparableTimSort.java:142)
+02-08 08:44:25.619: E/AndroidRuntime(1846): 	at java.util.Arrays.sort(Arrays.java:1957)
+02-08 08:44:25.619: E/AndroidRuntime(1846): 	at com.jacky.launcher.util.SearchGameUtil.getTfcardFileList(SearchGameUtil.java:72)
+02-08 08:44:25.619: E/AndroidRuntime(1846): 	at com.jacky.launcher.util.SearchGameUtil.searchROMList(SearchGameUtil.java:107)
+02-08 08:44:25.619: E/AndroidRuntime(1846): 	at com.jacky.launcher.BaseApplication$1.run(BaseApplication.java:31)
+02-08 08:44:25.619: E/AndroidRuntime(1846): 	at java.lang.Thread.run(Thread.java:818)
+02-08 08:44:25.624: I/Process(1846): Sending signal. PID: 1846 SIG: 9
+02-08 08:44:25.697: I/ActivityManager(376): Process com.jacky.launcher (pid 1846) has died
+02-08 08:44:25.714: I/ActivityManager(376): Start proc 1861:com.jacky.launcher/u0a61 for activity com.jacky.launcher/.activity.MainActivity
+02-08 08:44:25.715: I/art(1861): Late-enabling -Xcheck:jni
+02-08 08:44:25.824: I/MMKV(1861): <native-bridge.cpp:101::JNI_OnLoad> current API level = 23
+02-08 08:44:25.824: I/MMKV(1861): <MMKV.cpp:192::initialize> page size:4096
+02-08 08:44:25.825: I/MMKV(1861): <MMKV.cpp:206::initializeMMKV> root dir: /data/user/0/com.jacky.launcher/files/mmkv
+02-08 08:44:25.833: I/art(1861): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.835: I/art(1861): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.836: I/art(1861): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.837: I/art(1861): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.837: I/art(1861): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.837: I/art(1861): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.838: I/art(1861): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.839: I/art(1861): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.840: I/art(1861): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.842: I/art(1861): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.842: I/art(1861): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.844: I/art(1861): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.844: I/art(1861): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:25.872: I/art(1117): Starting a blocking GC Alloc
+02-08 08:44:25.873: I/art(1117): Starting a blocking GC Alloc
+02-08 08:44:25.902: E/AndroidRuntime(1861): FATAL EXCEPTION: Thread-255
+02-08 08:44:25.902: E/AndroidRuntime(1861): Process: com.jacky.launcher, PID: 1861
+02-08 08:44:25.902: E/AndroidRuntime(1861): java.lang.NullPointerException: Attempt to get length of null array
+02-08 08:44:25.902: E/AndroidRuntime(1861): 	at java.util.ComparableTimSort.sort(ComparableTimSort.java:142)
+02-08 08:44:25.902: E/AndroidRuntime(1861): 	at java.util.Arrays.sort(Arrays.java:1957)
+02-08 08:44:25.902: E/AndroidRuntime(1861): 	at com.jacky.launcher.util.SearchGameUtil.getTfcardFileList(SearchGameUtil.java:72)
+02-08 08:44:25.902: E/AndroidRuntime(1861): 	at com.jacky.launcher.util.SearchGameUtil.searchROMList(SearchGameUtil.java:107)
+02-08 08:44:25.902: E/AndroidRuntime(1861): 	at com.jacky.launcher.BaseApplication$1.run(BaseApplication.java:31)
+02-08 08:44:25.902: E/AndroidRuntime(1861): 	at java.lang.Thread.run(Thread.java:818)
+02-08 08:44:25.907: I/Process(1861): Sending signal. PID: 1861 SIG: 9
+02-08 08:44:25.958: I/ActivityManager(376): Process com.jacky.launcher (pid 1861) has died
+02-08 08:44:25.976: I/ActivityManager(376): Start proc 1876:com.jacky.launcher/u0a61 for activity com.jacky.launcher/.activity.MainActivity
+02-08 08:44:25.978: I/art(1876): Late-enabling -Xcheck:jni
+02-08 08:44:26.086: I/MMKV(1876): <native-bridge.cpp:101::JNI_OnLoad> current API level = 23
+02-08 08:44:26.087: I/MMKV(1876): <MMKV.cpp:192::initialize> page size:4096
+02-08 08:44:26.087: I/MMKV(1876): <MMKV.cpp:206::initializeMMKV> root dir: /data/user/0/com.jacky.launcher/files/mmkv
+02-08 08:44:26.096: I/art(1876): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:26.097: I/art(1876): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:26.098: I/art(1876): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:26.099: I/art(1876): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:26.099: I/art(1876): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:26.099: I/art(1876): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:26.100: I/art(1876): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:26.101: I/art(1876): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:26.101: I/art(1876): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:26.103: I/art(1876): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:26.103: I/art(1876): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:26.104: I/art(1876): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:26.105: I/art(1876): Rejecting re-init on previously-failed class java.lang.Class<org.greenrobot.greendao.database.DatabaseOpenHelper$EncryptedHelper>
+02-08 08:44:26.167: E/AndroidRuntime(1876): FATAL EXCEPTION: Thread-259
+02-08 08:44:26.167: E/AndroidRuntime(1876): Process: com.jacky.launcher, PID: 1876
+02-08 08:44:26.167: E/AndroidRuntime(1876): java.lang.NullPointerException: Attempt to get length of null array
+02-08 08:44:26.167: E/AndroidRuntime(1876): 	at java.util.ComparableTimSort.sort(ComparableTimSort.java:142)
+02-08 08:44:26.167: E/AndroidRuntime(1876): 	at java.util.Arrays.sort(Arrays.java:1957)
+02-08 08:44:26.167: E/AndroidRuntime(1876): 	at com.jacky.launcher.util.SearchGameUtil.getTfcardFileList(SearchGameUtil.java:72)
+02-08 08:44:26.167: E/AndroidRuntime(1876): 	at com.jacky.launcher.util.SearchGameUtil.searchROMList(SearchGameUtil.java:107)
+02-08 08:44:26.167: E/AndroidRuntime(1876): 	at com.jacky.launcher.BaseApplication$1.run(BaseApplication.java:31)
+02-08 08:44:26.167: E/AndroidRuntime(1876): 	at java.lang.Thread.run(Thread.java:818)
+02-08 08:44:26.171: I/Process(1876): Sending signal. PID: 1876 SIG: 9
+02-08 08:44:26.247: I/ActivityManager(376): Process com.jacky.launcher (pid 1876) has died
+02-08 08:44:26.248: W/ActivityManager(376): Force removing ActivityRecord{263d9ad u0 com.jacky.launcher/.activity.MainActivity t22}: app died, no saved state
+02-08 08:44:26.257: W/WindowManager(376): Failed looking up window
+02-08 08:44:26.257: W/WindowManager(376): java.lang.IllegalArgumentException: Requested window android.view.ViewRootImpl$W@f512048 does not exist
+02-08 08:44:26.257: W/WindowManager(376): 	at com.android.server.wm.WindowManagerService.windowForClientLocked(WindowManagerService.java:8941)
+02-08 08:44:26.257: W/WindowManager(376): 	at com.android.server.wm.WindowManagerService.windowForClientLocked(WindowManagerService.java:8932)
+02-08 08:44:26.257: W/WindowManager(376): 	at com.android.server.wm.WindowManagerService.removeWindow(WindowManagerService.java:2766)
+02-08 08:44:26.257: W/WindowManager(376): 	at com.android.server.wm.Session.remove(Session.java:187)
+02-08 08:44:26.257: W/WindowManager(376): 	at android.view.ViewRootImpl.dispatchDetachedFromWindow(ViewRootImpl.java:3099)
+02-08 08:44:26.257: W/WindowManager(376): 	at android.view.ViewRootImpl.doDie(ViewRootImpl.java:5606)
+02-08 08:44:26.257: W/WindowManager(376): 	at android.view.ViewRootImpl$ViewRootHandler.handleMessage(ViewRootImpl.java:3409)
+02-08 08:44:26.257: W/WindowManager(376): 	at android.os.Handler.dispatchMessage(Handler.java:102)
+02-08 08:44:26.257: W/WindowManager(376): 	at android.os.Looper.loop(Looper.java:148)
+02-08 08:44:26.257: W/WindowManager(376): 	at android.os.HandlerThread.run(HandlerThread.java:61)
+02-08 08:44:26.257: W/WindowManager(376): 	at com.android.server.ServiceThread.run(ServiceThread.java:46)
+02-08 08:44:26.275: D/Surface(622): Surface::final mReqUsage=602
+02-08 08:44:26.284: W/InputMethodManagerService(376): Window already focused, ignoring focus gain of: com.android.internal.view.IInputMethodClient$Stub$Proxy@fdffa92 attribute=null, token = android.os.BinderProxy@a2c63f3
+02-08 08:44:26.742: I/art(1117): Starting a blocking GC Alloc
+02-08 08:44:26.742: I/art(1117): Starting a blocking GC Alloc
+02-08 08:44:27.498: I/art(1117): Starting a blocking GC Alloc
+02-08 08:44:27.499: I/art(1117): Starting a blocking GC Alloc
+02-08 08:44:28.237: I/art(1117): Starting a blocking GC Alloc
+02-08 08:44:28.237: I/art(1117): Starting a blocking GC Alloc
+02-08 08:44:28.984: I/art(1117): Starting a blocking GC Alloc
+02-08 08:44:28.984: I/art(1117): Starting a blocking GC Alloc
+02-08 08:44:29.045: D/alsa_route(191): route_set_controls() set route 24
+02-08 08:44:29.045: D/AudioHardwareTiny(191): close device
+02-08 08:44:29.735: I/art(1117): Starting a blocking GC Alloc
+02-08 08:44:29.736: I/art(1117): Starting a blocking GC Alloc
+02-08 08:44:30.451: I/art(1117): Starting a blocking GC Alloc
+02-08 08:44:30.452: I/art(1117): Starting a blocking GC Alloc
+: E/(): Device disconnected: 1
+: E/(): Device disconnected

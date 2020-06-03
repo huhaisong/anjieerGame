@@ -1,0 +1,217 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/x640"
+    android:layout_height="@dimen/y480"
+    android:background="@mipmap/bj"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y10"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/iv_pic1"
+                    android:layout_width="@dimen/x196"
+                    android:layout_height="@dimen/y182"
+                    android:layout_marginLeft="@dimen/x5"
+                    android:background="@drawable/sel_focus"
+                    android:focusableInTouchMode="true">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/pic_1"></ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="@dimen/x5"
+                        android:layout_marginBottom="@dimen/x5"
+                        android:text="街机游戏"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/iv_pic2"
+                    android:layout_width="@dimen/x196"
+                    android:layout_height="@dimen/y182"
+                    android:layout_marginLeft="@dimen/x5"
+                    android:background="@drawable/sel_focus"
+                    android:focusableInTouchMode="true">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/pic_2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="@dimen/x5"
+                        android:layout_marginBottom="@dimen/x5"
+                        android:text="N64游戏"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/iv_pic3"
+                    android:layout_width="@dimen/x100"
+                    android:layout_height="@dimen/y146"
+                    android:layout_marginLeft="@dimen/x2"
+                    android:layout_marginRight="@dimen/x2"
+                    android:background="@drawable/sel_focus"
+                    android:focusableInTouchMode="true">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/pic_3" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="@dimen/x5"
+                        android:layout_marginBottom="@dimen/x5"
+                        android:text="FC游戏"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/iv_pic4"
+                    android:layout_width="@dimen/x100"
+                    android:layout_height="@dimen/y146"
+                    android:layout_marginRight="@dimen/x2"
+                    android:background="@drawable/sel_focus"
+                    android:focusableInTouchMode="true">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/pic_4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="@dimen/x5"
+                        android:layout_marginBottom="@dimen/x5"
+                        android:text="PSP游戏"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/iv_pic5"
+                    android:layout_width="@dimen/x100"
+                    android:layout_height="@dimen/y146"
+                    android:layout_marginRight="@dimen/x2"
+                    android:background="@drawable/sel_focus"
+                    android:focusableInTouchMode="true">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/pic_5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="@dimen/x5"
+                        android:layout_marginBottom="@dimen/x5"
+                        android:text="MD游戏"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/iv_pic6"
+                    android:layout_width="@dimen/x100"
+                    android:layout_height="@dimen/y146"
+                    android:background="@drawable/sel_focus"
+                    android:focusableInTouchMode="true">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/pic_6" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="@dimen/x5"
+                        android:layout_marginBottom="@dimen/x5"
+                        android:text="SFC游戏"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/iv_pic7"
+            android:layout_width="@dimen/x228"
+            android:layout_height="@dimen/y326"
+            android:layout_marginLeft="@dimen/x5"
+            android:background="@drawable/sel_focus"
+            android:focusableInTouchMode="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@mipmap/pic_7" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/x5"
+                android:layout_marginBottom="@dimen/x5"
+                android:text="GBA游戏"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/y10"
+        android:background="@mipmap/app_rv_bg"
+        android:clipChildren="false"
+        android:scrollbars="none" />
+</LinearLayout>

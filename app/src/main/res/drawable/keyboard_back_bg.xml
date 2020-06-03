@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@android:id/background"
+        android:drawable="@mipmap/zimu_long_bg"
+        android:gravity="center_vertical">
+    </item>
+
+    <item
+        android:drawable="@mipmap/zimu_back"
+        android:gravity="center">
+
+    </item>
+</layer-list>

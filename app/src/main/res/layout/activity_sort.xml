@@ -1,0 +1,248 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/x640"
+    android:layout_height="@dimen/y480"
+    android:background="@mipmap/sort_bg"
+    android:fitsSystemWindows="true"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="@dimen/x286"
+        android:layout_height="@dimen/y480"
+        android:background="@mipmap/sort_left_bg"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/rg_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y23"
+            android:background="@mipmap/radio_group_bg"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbtn_total"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:text="全部"
+                android:textColor="@drawable/selector_tv_color"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/rbtn_sort"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:text="分类"
+                android:textColor="@drawable/selector_tv_color"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/rbtn_last"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:text="最近"
+                android:textColor="@drawable/selector_tv_color"
+                android:textSize="16sp" />
+
+            <RadioButton
+                android:id="@+id/rbtn_search"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:text="搜索"
+                android:textColor="@drawable/selector_tv_color"
+                android:textSize="16sp" />
+        </RadioGroup>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="@dimen/x286"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="@dimen/x351"
+        android:layout_height="@dimen/y480"
+        android:background="@mipmap/sort_right_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_video"
+            android:layout_width="@dimen/x351"
+            android:layout_height="@dimen/y280"
+            android:layout_marginTop="@dimen/y23"
+            android:background="@mipmap/video_bg"
+            android:gravity="center_horizontal">
+
+            <SurfaceView
+                android:id="@+id/surfaceView_main_activity"
+                android:layout_width="@dimen/x325"
+                android:layout_height="@dimen/y255"
+                android:layout_marginTop="@dimen/y10"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_video"
+                android:layout_width="@dimen/x325"
+                android:layout_height="@dimen/y255"
+                android:layout_marginTop="@dimen/y10"
+                android:background="@mipmap/pic_1"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/ll_keyboard"
+            layout="@layout/keyboard"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_handle"
+            android:layout_width="@dimen/x90"
+            android:layout_height="@dimen/y92"
+            android:layout_below="@+id/ll_video"
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_marginTop="@dimen/y50"
+            android:background="@mipmap/handle_pic" />
+
+        <RelativeLayout
+            android:id="@+id/ll_select_game"
+            android:layout_width="@dimen/x145"
+            android:layout_height="@dimen/y36"
+            android:layout_below="@+id/ll_video"
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_marginTop="@dimen/y45"
+            android:layout_toRightOf="@id/iv_handle"
+            android:background="@mipmap/sort_select_bg"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_up_down_change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="选择游戏"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+
+            <ImageView
+                android:layout_width="@dimen/x18"
+                android:layout_height="@dimen/y20"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x8"
+                android:layout_toRightOf="@+id/tv_up_down_change"
+                android:background="@mipmap/up_down_change" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_change_page"
+            android:layout_width="@dimen/x145"
+            android:layout_height="@dimen/y36"
+            android:layout_below="@+id/ll_select_game"
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_toRightOf="@id/iv_handle"
+            android:background="@mipmap/sort_select_bg"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_change_page"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="选择游戏"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+
+            <ImageView
+                android:layout_width="@dimen/x14"
+                android:layout_height="@dimen/y18"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x10"
+                android:layout_toRightOf="@+id/tv_change_page"
+                android:background="@mipmap/change_page_right_pic" />
+
+            <ImageView
+                android:layout_width="@dimen/x14"
+                android:layout_height="@dimen/y18"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/x10"
+                android:layout_toLeftOf="@+id/tv_change_page"
+                android:background="@mipmap/change_page_left_pic" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_search_game"
+            android:layout_width="@dimen/x145"
+            android:layout_height="@dimen/y36"
+            android:layout_below="@+id/ll_change_page"
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_toRightOf="@id/iv_handle"
+            android:background="@mipmap/sort_select_bg"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_search_game"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="搜索游戏"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_ok"
+            android:layout_width="@dimen/x66"
+            android:layout_height="@dimen/y66"
+            android:layout_below="@+id/ll_video"
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_marginTop="@dimen/y50"
+            android:layout_toRightOf="@+id/ll_search_game"
+            android:background="@mipmap/button_ok" />
+
+        <TextView
+            android:layout_width="@dimen/x66"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_ok"
+            android:layout_alignLeft="@+id/iv_ok"
+            android:layout_marginTop="-6dp"
+            android:gravity="center"
+            android:text="OK"
+            android:textColor="@color/white"
+            android:textSize="28sp" />
+    </RelativeLayout>
+</LinearLayout>

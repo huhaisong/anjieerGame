@@ -1,0 +1,532 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/x350"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/y30"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="@dimen/x348"
+        android:layout_height="@dimen/y88"
+        android:background="@mipmap/edit_bg_1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="@dimen/x340"
+            android:layout_height="@dimen/y70"
+            android:background="@mipmap/edit_bg_2"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/x20"
+                android:layout_height="@dimen/y18"
+                android:layout_marginLeft="@dimen/x35"
+                android:background="@mipmap/edit_search" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="@dimen/y18"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/textColorHint" />
+
+            <EditText
+                android:id="@+id/et_game"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="输入游戏名或关键字"
+                android:maxLines="1"
+                android:textColor="@color/textColorHint"
+                android:textColorHint="@color/textColorHint"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_A"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_marginLeft="@dimen/y30"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="A"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/tv_B"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_toRightOf="@+id/tv_A"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="B"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_C"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_toRightOf="@+id/tv_B"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="C"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_D"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_toRightOf="@+id/tv_C"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="D"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_E"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_toRightOf="@+id/tv_D"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="E"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_F"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_toRightOf="@+id/tv_E"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="F"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_G"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_toRightOf="@+id/tv_F"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="G"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_delete"
+            android:layout_width="@dimen/x46"
+            android:layout_height="@dimen/y33"
+            android:layout_marginTop="@dimen/y2"
+            android:layout_toRightOf="@+id/tv_G"
+            android:alpha="0.6"
+            android:background="@drawable/keyboard_back_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_H"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_below="@+id/tv_A"
+            android:layout_marginLeft="@dimen/y30"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="H"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/tv_I"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_below="@+id/tv_A"
+            android:layout_toRightOf="@+id/tv_A"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="I"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_J"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_below="@+id/tv_A"
+            android:layout_toRightOf="@+id/tv_B"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="J"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_K"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_below="@+id/tv_A"
+            android:layout_toRightOf="@+id/tv_C"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="K"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_L"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_below="@+id/tv_A"
+            android:layout_toRightOf="@+id/tv_D"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="L"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_M"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_below="@+id/tv_A"
+            android:layout_toRightOf="@+id/tv_E"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="M"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_N"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_below="@+id/tv_A"
+            android:layout_toRightOf="@+id/tv_F"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="N"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_clr"
+            android:layout_width="@dimen/x46"
+            android:layout_height="@dimen/y33"
+            android:layout_below="@+id/tv_A"
+            android:layout_marginTop="@dimen/y2"
+            android:layout_toRightOf="@+id/tv_G"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_long_white_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="CLR"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_O"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_below="@+id/tv_H"
+            android:layout_marginLeft="@dimen/y30"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="O"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/tv_P"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_below="@+id/tv_H"
+            android:layout_toRightOf="@+id/tv_A"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="P"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_Q"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_below="@+id/tv_H"
+            android:layout_toRightOf="@+id/tv_B"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="Q"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_R"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_below="@+id/tv_H"
+            android:layout_toRightOf="@+id/tv_C"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="R"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_S"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_below="@+id/tv_H"
+            android:layout_toRightOf="@+id/tv_D"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="S"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_T"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_below="@+id/tv_H"
+            android:layout_toRightOf="@+id/tv_E"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="T"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_U"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_below="@+id/tv_H"
+            android:layout_toRightOf="@+id/tv_F"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="U"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_abc"
+            android:layout_width="@dimen/x46"
+            android:layout_height="@dimen/y33"
+            android:layout_below="@+id/tv_H"
+            android:layout_marginTop="@dimen/y2"
+            android:layout_toRightOf="@+id/tv_G"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_long_white_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="ABC"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_V"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_below="@+id/tv_O"
+            android:layout_marginLeft="@dimen/y30"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="V"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/tv_W"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_below="@+id/tv_O"
+            android:layout_toRightOf="@+id/tv_A"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="W"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_X"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_below="@+id/tv_O"
+            android:layout_toRightOf="@+id/tv_B"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="X"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_Y"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_below="@+id/tv_O"
+            android:layout_toRightOf="@+id/tv_C"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="Y"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_Z"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_below="@+id/tv_O"
+            android:layout_toRightOf="@+id/tv_D"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="Z"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_douhao"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_below="@+id/tv_O"
+            android:layout_toRightOf="@+id/tv_E"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="，"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_juhao"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y38"
+            android:layout_below="@+id/tv_O"
+            android:layout_toRightOf="@+id/tv_F"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="。"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_123"
+            android:layout_width="@dimen/x46"
+            android:layout_height="@dimen/y33"
+            android:layout_below="@+id/tv_O"
+            android:layout_marginTop="@dimen/y2"
+            android:layout_toRightOf="@+id/tv_G"
+            android:alpha="0.6"
+            android:background="@mipmap/zimu_long_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="123"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+</LinearLayout>
