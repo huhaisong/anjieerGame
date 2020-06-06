@@ -2,6 +2,7 @@ package com.jacky.launcher.util;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.jacky.launcher.BaseApplication;
 import com.jacky.launcher.config.Game;
@@ -69,10 +70,13 @@ public class SearchGameUtil {
         if (file.exists()) {
             listFiles = file.list();
         } else {
+            Toast.makeText(BaseApplication.getINSTANCE(), "没有找到" + game.getName() + "文件夹！", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (listFiles == null || listFiles.length == 0)
+        if (listFiles == null || listFiles.length == 0) {
+            Toast.makeText(BaseApplication.getINSTANCE(),  game.getName() + "里面没有游戏！", Toast.LENGTH_SHORT).show();
             return;
+        }
         Arrays.sort(listFiles);
         if (game == Game.VARC) {
             for (int i = 0; i < listFiles.length; i++) {
