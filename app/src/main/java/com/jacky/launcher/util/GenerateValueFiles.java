@@ -1,5 +1,4 @@
-package com.example.hu.mediaplayerapk.util;
-
+package com.jacky.launcher.util;
 /**
  * Created by huhaisong on 2017/8/4 16:03.
  * 这是用来创建不同分辨率资源文件的
@@ -86,7 +85,7 @@ public class GenerateValueFiles {
     public static void main(String[] args) {
         int baseW = 640;
         int baseH = 480;
-        String addition = "1366,768";  //格式为  "1280,720"  1280为宽，720为高
+        String addition = "640,480";  //格式为  "1280,720"  1280为宽，720为高
         new GenerateValueFiles(baseW, baseH, addition).generate();
     }
 }
