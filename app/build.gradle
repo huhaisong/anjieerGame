@@ -46,6 +46,14 @@ android {
         generateTests false //设置为true以自动生成单元测试。
         targetGenDirTests 'src/main/java' //应存储生成的单元测试的基本目录。默认为 src / androidTest / java。
     }
+
+    applicationVariants.all { variant ->
+        def buildType = variant.buildType.name
+        def createTime = new Date().format("YYYYMMdd_HHmm", TimeZone.getTimeZone("GMT+08:00"))
+        variant.outputs.all {
+            outputFileName = createTime + "_" + buildType + ".apk"
+        }
+    }
 }
 
 dependencies {

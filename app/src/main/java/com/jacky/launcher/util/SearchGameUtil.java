@@ -1,6 +1,7 @@
 package com.jacky.launcher.util;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.jacky.launcher.BaseApplication;
 import com.jacky.launcher.config.Game;
@@ -59,6 +60,7 @@ public class SearchGameUtil {
         }
     };
 
+
     private static void getTfcardFileList(Game game) {
         int j;
         String Name;
@@ -74,6 +76,7 @@ public class SearchGameUtil {
         Arrays.sort(listFiles);
         if (game == Game.VARC) {
             for (int i = 0; i < listFiles.length; i++) {
+                Log.e(TAG, "getTfcardFileList: " + listFiles[i]);
                 j = listFiles[i].indexOf(".zip");
                 if (j > 0) {
                     Name = listFiles[i].substring(0, j);
@@ -85,6 +88,7 @@ public class SearchGameUtil {
         } else {
             for (int i = 0; i < listFiles.length; i++) {
                 if (listFiles[i].endsWith(game.getSuffix())) {
+                    Log.e(TAG, "getTfcardFileList: " + listFiles[i]);
                     j = listFiles[i].indexOf(game.getSuffix());
                     if (j > 0) {
                         Name = listFiles[i].substring(0, j);
