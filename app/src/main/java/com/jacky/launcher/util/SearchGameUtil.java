@@ -1,10 +1,12 @@
 package com.jacky.launcher.util;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.jacky.launcher.BaseApplication;
+import com.jacky.launcher.broadcast.DialogBroadcastReceiver;
 import com.jacky.launcher.config.Game;
 import com.jacky.launcher.daomanager.GameDaoManager;
 import com.jacky.launcher.entity.GameEntity;
@@ -105,10 +107,22 @@ public class SearchGameUtil {
         }
     }
 
+    public static Boolean isSearching = false;
+
     public static void searchROMList(Context context) { // at bootup or insert tfcard
+        isSearching = true;
+        Intent intent = new Intent(DialogBroadcastReceiver.SHOW_DIALOG);
+        context.sendBroadcast(intent);
         DBUtil.copyDbFile(context);
         for (Game game : Game.values()) {
             getTfcardFileList(game);
         }
+        isSearching = false;
+        Intent intent1 = new Intent(DialogBroadcastReceiver.DISMISS_DIALOG);
+        context.sendBroadcast(intent1);
+    }
+
+    public interface FinishSearchListen {
+        void onFinished();
     }
 }

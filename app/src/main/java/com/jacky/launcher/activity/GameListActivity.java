@@ -3,6 +3,7 @@ package com.jacky.launcher.activity;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -11,6 +12,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
@@ -32,6 +34,7 @@ import android.widget.Toast;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.jacky.launcher.R;
 import com.jacky.launcher.adapter.GameAdapter;
+import com.jacky.launcher.broadcast.DialogBroadcastReceiver;
 import com.jacky.launcher.config.Game;
 import com.jacky.launcher.daomanager.GameDaoManager;
 import com.jacky.launcher.entity.GameEntity;
@@ -42,7 +45,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameListActivity extends Activity implements RadioGroup.OnCheckedChangeListener, View.OnFocusChangeListener, View.OnKeyListener, View.OnClickListener {
+public class GameListActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, View.OnFocusChangeListener, View.OnKeyListener, View.OnClickListener {
 
     private RadioGroup radioGroup;
     private RecyclerView recyclerView;
@@ -58,6 +61,7 @@ public class GameListActivity extends Activity implements RadioGroup.OnCheckedCh
     private LinearLayout llKeyboard;
     private LinearLayout llVideo;
     private EditText etGame;
+    private DialogBroadcastReceiver dialogBroadcastReceiver;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -151,7 +155,7 @@ public class GameListActivity extends Activity implements RadioGroup.OnCheckedCh
                 case PLAY_VIDEO_MESSAGE:
                     if (isSurfaceViewCreated) {
                         mHandler.removeMessages(PLAY_VIDEO_MESSAGE);
-                        mediaPlayerImp.play(/*videoUrl*/ "kof98m" + ".avi", true, true);
+                        mediaPlayerImp.play(videoUrl, false, true);
                     } else {
                         Message message = new Message();
                         message.what = PLAY_VIDEO_MESSAGE;
@@ -167,6 +171,23 @@ public class GameListActivity extends Activity implements RadioGroup.OnCheckedCh
     private String videoUrl;
     private SurfaceView surfaceView;
     private ImageView ivVideo;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(DialogBroadcastReceiver.DISMISS_DIALOG);
+        intentFilter.addAction(DialogBroadcastReceiver.SHOW_DIALOG);
+        dialogBroadcastReceiver = new DialogBroadcastReceiver();
+        registerReceiver(dialogBroadcastReceiver, intentFilter);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        unregisterReceiver(dialogBroadcastReceiver);
+        mediaPlayerImp.close();
+    }
 
     private void initView() {
         radioGroup = findViewById(R.id.rg_container);
@@ -267,7 +288,7 @@ public class GameListActivity extends Activity implements RadioGroup.OnCheckedCh
             public void onFocusChange(View v, boolean hasFocus, GameEntity gameEntity) {
                 Log.e(TAG, "onFocusChange: " + gameEntity.toString());
                 if (hasFocus) {
-                    videoUrl = gameEntity.getName();
+                    videoUrl = "/mnt/external_sd/" + gameEntity.getType() + "/gui/" + gameEntity.getGame() + ".avi";
                     mHandler.sendEmptyMessage(PLAY_VIDEO_MESSAGE);
                     ivVideo.setVisibility(View.GONE);
                     surfaceView.setVisibility(View.VISIBLE);
@@ -305,11 +326,6 @@ public class GameListActivity extends Activity implements RadioGroup.OnCheckedCh
 
     private static final String TAG = "GameListActivity";
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        mediaPlayerImp.close();
-    }
 
     private int oldCheckedId;
 

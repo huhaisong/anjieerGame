@@ -11,6 +11,7 @@ import com.jacky.launcher.dao.DaoMaster;
 import com.jacky.launcher.dao.DaoSession;
 import com.jacky.launcher.util.DBUtil;
 import com.jacky.launcher.util.SearchGameUtil;
+import com.kongzue.dialog.v3.WaitDialog;
 import com.tencent.mmkv.MMKV;
 
 import java.io.IOException;
@@ -18,6 +19,7 @@ import java.io.IOException;
 public class BaseApplication extends Application {
 
     private static BaseApplication INSTANCE;
+
 
     @Override
     public void onCreate() {
@@ -27,6 +29,7 @@ public class BaseApplication extends Application {
         new Thread(new Runnable() {
             @Override
             public void run() {
+
                 initGreenDao();
                 SearchGameUtil.searchROMList(BaseApplication.this);
             }

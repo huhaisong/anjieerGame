@@ -2,10 +2,11 @@ package com.jacky.launcher.activity;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
+import android.content.IntentFilter;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,7 +19,10 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+
 import com.jacky.launcher.R;
+import com.jacky.launcher.broadcast.DialogBroadcastReceiver;
 import com.jacky.launcher.util.AppUtil;
 import com.jacky.launcher.util.LightUtil;
 import com.jacky.launcher.util.MMKVUtil;
@@ -26,7 +30,7 @@ import com.jacky.launcher.util.WifiUtil;
 import com.jacky.launcher.util.runtimepermissions.PermissionsManager;
 import com.jacky.launcher.util.runtimepermissions.PermissionsResultAction;
 
-public class SettingActivity extends Activity {
+public class SettingActivity extends AppCompatActivity {
     private static final String[] name = {"汉语", "English"};
     private Spinner languageSpinner, themeSpinner;
     private ArrayAdapter languageAdapter, themeAdapter;
@@ -36,6 +40,7 @@ public class SettingActivity extends Activity {
 
     private WifiUtil mWifiUtil;
     private BluetoothAdapter mBluetoothAdapter;
+    private DialogBroadcastReceiver dialogBroadcastReceiver;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,6 +61,23 @@ public class SettingActivity extends Activity {
         });
         initView();
         initListener();
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(DialogBroadcastReceiver.DISMISS_DIALOG);
+        intentFilter.addAction(DialogBroadcastReceiver.SHOW_DIALOG);
+        dialogBroadcastReceiver = new DialogBroadcastReceiver();
+        registerReceiver(dialogBroadcastReceiver, intentFilter);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        unregisterReceiver(dialogBroadcastReceiver);
     }
 
     private void initListener() {

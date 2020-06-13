@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+
 import com.jacky.launcher.R;
 import com.jacky.launcher.model.AppModel;
 
