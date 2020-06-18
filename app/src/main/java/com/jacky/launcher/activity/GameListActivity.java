@@ -466,6 +466,15 @@ public class GameListActivity extends AppCompatActivity implements RadioGroup.On
 
     @Override
     public boolean onKey(View v, int keyCode, KeyEvent event) {
+        if (event.getKeyCode() == KeyEvent.KEYCODE_DEL || event.getKeyCode() == KeyEvent.KEYCODE_FORWARD_DEL) {
+            if (!TextUtils.isEmpty(etGame.getText().toString()))
+                if (etGame.getText().toString().length() > 1) {
+                    etGame.setText(etGame.getText().toString().substring(0, etGame.getText().toString().length() - 1));
+                } else if (etGame.getText().toString().length() == 1) {
+                    etGame.setText("");
+                }
+            return true;
+        }
         if (event.getAction() != KeyEvent.ACTION_DOWN) {
             return false;
         }
