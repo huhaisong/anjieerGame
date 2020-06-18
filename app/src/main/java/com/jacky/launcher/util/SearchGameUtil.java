@@ -9,6 +9,7 @@ import com.jacky.launcher.BaseApplication;
 import com.jacky.launcher.broadcast.DialogBroadcastReceiver;
 import com.jacky.launcher.config.Game;
 import com.jacky.launcher.daomanager.GameDaoManager;
+import com.jacky.launcher.daomanager.RecentGameDaoManager;
 import com.jacky.launcher.entity.GameEntity;
 
 import java.io.File;
@@ -64,7 +65,7 @@ public class SearchGameUtil {
     };
 
 
-    private static void getTfcardFileList(Game game) {
+    private static void getTfcardFileList(Game game, Context context) {
         int j;
         String Name;
         String[] listFiles = null;
@@ -89,7 +90,7 @@ public class SearchGameUtil {
                 if (j > 0) {
                     Name = listFiles[i].substring(0, j);
                     if (!ARCBios.contains(Name)) {
-                        GameDaoManager.getInstance().insertOrReplaceByName(Name);
+                        GameDaoManager.getInstance(context).insertOrReplaceByName(Name);
                     }
                 }
             }
@@ -100,7 +101,7 @@ public class SearchGameUtil {
                     j = listFiles[i].indexOf(game.getSuffix());
                     if (j > 0) {
                         Name = listFiles[i].substring(0, j);
-                        GameDaoManager.getInstance().insertOrReplaceByName(Name);
+                        GameDaoManager.getInstance(context).insertOrReplaceByName(Name);
                     }
                 }
             }
@@ -115,7 +116,7 @@ public class SearchGameUtil {
         context.sendBroadcast(intent);
         DBUtil.copyDbFile(context);
         for (Game game : Game.values()) {
-            getTfcardFileList(game);
+            getTfcardFileList(game, context);
         }
         isSearching = false;
         Intent intent1 = new Intent(DialogBroadcastReceiver.DISMISS_DIALOG);

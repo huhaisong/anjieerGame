@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
+import com.jacky.launcher.daomanager.RecentGameDaoManager;
 import com.jacky.launcher.util.SearchGameUtil;
 
 public class TFCardReceive extends BroadcastReceiver {
@@ -13,6 +14,7 @@ public class TFCardReceive extends BroadcastReceiver {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                RecentGameDaoManager.getInstance(context).deleteAll();
                 SearchGameUtil.searchROMList(context);
             }
         }).start();

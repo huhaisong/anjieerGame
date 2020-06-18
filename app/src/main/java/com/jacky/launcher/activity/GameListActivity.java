@@ -37,7 +37,9 @@ import com.jacky.launcher.adapter.GameAdapter;
 import com.jacky.launcher.broadcast.DialogBroadcastReceiver;
 import com.jacky.launcher.config.Game;
 import com.jacky.launcher.daomanager.GameDaoManager;
+import com.jacky.launcher.daomanager.RecentGameDaoManager;
 import com.jacky.launcher.entity.GameEntity;
+import com.jacky.launcher.entity.RecentGameEntity;
 import com.jacky.launcher.media.MediaPlayerImp;
 import com.jacky.launcher.util.MMKVUtil;
 
@@ -52,6 +54,7 @@ public class GameListActivity extends AppCompatActivity implements RadioGroup.On
     private GameAdapter gameAdapter;
     private List<GameEntity> totalGames = new ArrayList<>();
     private List<GameEntity> currentTypeGames = new ArrayList<>();
+    private List<GameEntity> recentTypeGames = new ArrayList<>();
     private Game type;
     private RadioButton rbtn_total, rbtn_sort, rbtn_last, rbtn_search;
     private MediaPlayerImp mediaPlayerImp;
@@ -168,6 +171,7 @@ public class GameListActivity extends AppCompatActivity implements RadioGroup.On
         }
     });
 
+
     private String videoUrl;
     private SurfaceView surfaceView;
     private ImageView ivVideo;
@@ -180,6 +184,9 @@ public class GameListActivity extends AppCompatActivity implements RadioGroup.On
         intentFilter.addAction(DialogBroadcastReceiver.SHOW_DIALOG);
         dialogBroadcastReceiver = new DialogBroadcastReceiver();
         registerReceiver(dialogBroadcastReceiver, intentFilter);
+        if (isSearch) {
+            radioGroup.check(R.id.rbtn_search);
+        }
     }
 
     @Override
@@ -188,6 +195,8 @@ public class GameListActivity extends AppCompatActivity implements RadioGroup.On
         unregisterReceiver(dialogBroadcastReceiver);
         mediaPlayerImp.close();
     }
+
+    private boolean isSearch = false;
 
     private void initView() {
         radioGroup = findViewById(R.id.rg_container);
@@ -203,8 +212,27 @@ public class GameListActivity extends AppCompatActivity implements RadioGroup.On
         etGame = findViewById(R.id.et_game);
         llVideo = findViewById(R.id.ll_video);
         type = (Game) getIntent().getSerializableExtra("type");
-        totalGames = GameDaoManager.getInstance().searchAll();
-        currentTypeGames = GameDaoManager.getInstance().queryByType(type.getName());
+        if (type == null) {
+            type = Game.VARC;
+        }
+        isSearch = getIntent().getBooleanExtra("isSearch", false);
+        totalGames = GameDaoManager.getInstance(this).searchAll();
+        currentTypeGames = GameDaoManager.getInstance(this).queryByType(type.getName());
+        List<RecentGameEntity> tempRecentGameEntities = RecentGameDaoManager.getInstance(this).searchAll();
+        if (!tempRecentGameEntities.isEmpty() && tempRecentGameEntities.size() > 0) {
+            recentTypeGames.clear();
+            for (RecentGameEntity item : tempRecentGameEntities) {
+                GameEntity gameEntity = new GameEntity();
+                gameEntity.setChName(item.getChName());
+                gameEntity.setId(item.getId());
+                gameEntity.setName(item.getName());
+                gameEntity.setPinyin(item.getPinyin());
+                gameEntity.setType(item.getType());
+                gameEntity.setVisiable(item.getVisiable());
+                recentTypeGames.add(gameEntity);
+            }
+        }
+
         rbtn_sort.setText(type.getGameName());
         Log.e(TAG, "initView: 1 = " + totalGames.size() + ",2 = " + currentTypeGames.size());
         mSurfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
@@ -316,6 +344,14 @@ public class GameListActivity extends AppCompatActivity implements RadioGroup.On
                         BootIntent.putExtra("lang", MMKVUtil.getLanguage()); // 0 is cn, 1 is en
                         startActivity(BootIntent);
                         overridePendingTransition(0, 0);
+                        RecentGameEntity recentGameEntity = new RecentGameEntity();
+                        recentGameEntity.setChName(gameEntity.getChName());
+                        recentGameEntity.setId(gameEntity.getId());
+                        recentGameEntity.setName(gameEntity.getName());
+                        recentGameEntity.setPinyin(gameEntity.getPinyin());
+                        recentGameEntity.setType(gameEntity.getType());
+                        recentGameEntity.setVisiable(gameEntity.getVisiable());
+                        RecentGameDaoManager.getInstance(GameListActivity.this).insertOrReplaceByName(recentGameEntity);
                     } else {
                         Toast.makeText(GameListActivity.this, "emu not found", Toast.LENGTH_SHORT).show();
                     }
@@ -369,6 +405,12 @@ public class GameListActivity extends AppCompatActivity implements RadioGroup.On
             case R.id.rbtn_last:
                 if (rbtn_last.isChecked()) {
                     Log.e(TAG, "onCheckedChanged: rbtn_last");
+                    new Handler().post(new Runnable() {
+                        @Override
+                        public void run() {
+                            gameAdapter.setNewData(recentTypeGames);
+                        }
+                    });
                     llKeyboard.setVisibility(View.INVISIBLE);
                     ivVideo.setVisibility(View.VISIBLE);
                     surfaceView.setVisibility(View.GONE);

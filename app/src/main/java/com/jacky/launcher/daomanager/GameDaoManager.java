@@ -1,9 +1,12 @@
 package com.jacky.launcher.daomanager;
 
 import android.app.Application;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 
 import com.jacky.launcher.BaseApplication;
 import com.jacky.launcher.config.Game;
+import com.jacky.launcher.dao.DaoMaster;
 import com.jacky.launcher.dao.DaoSession;
 import com.jacky.launcher.dao.GameEntityDao;
 import com.jacky.launcher.entity.GameEntity;
@@ -11,22 +14,29 @@ import com.jacky.launcher.entity.GameEntity;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class GameDaoManager {
 
     private static GameDaoManager INSTANCE;
     private GameEntityDao gameEntityDao;
 
-    public static synchronized GameDaoManager getInstance() {
+    public static synchronized GameDaoManager getInstance(Context context) {
         if (INSTANCE == null) {
-            INSTANCE = new GameDaoManager();
+            INSTANCE = new GameDaoManager(context);
         }
         return INSTANCE;
     }
 
-    public GameDaoManager() {
-        DaoSession daoSession = BaseApplication.getINSTANCE().getDaoSession();
-        gameEntityDao = daoSession.getGameEntityDao();
+    private DaoMaster.DevOpenHelper mHelper;
+    private SQLiteDatabase db;
+    private DaoMaster mDaoMaster;
+    private DaoSession mDaoSession;
+
+    public GameDaoManager(Context context) {
+        mHelper = new DaoMaster.DevOpenHelper(context, "aje.db");
+        db = mHelper.getWritableDatabase();
+        mDaoMaster = new DaoMaster(db);
+        mDaoSession = mDaoMaster.newSession();
+        gameEntityDao = mDaoSession.getGameEntityDao();
     }
 
     /**

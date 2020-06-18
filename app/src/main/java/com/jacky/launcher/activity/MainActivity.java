@@ -20,6 +20,7 @@ import com.jacky.launcher.adapter.AppAdapter;
 import com.jacky.launcher.broadcast.DialogBroadcastReceiver;
 import com.jacky.launcher.config.Game;
 import com.jacky.launcher.model.AppModel;
+import com.jacky.launcher.util.AppUtil;
 import com.jacky.launcher.util.SearchGameUtil;
 import com.kongzue.dialog.v3.WaitDialog;
 
@@ -61,8 +62,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     case 0:
                         break;
                     case 1:
+                        AppUtil.openActivity(MainActivity.this,"com.kk.xx.newplayer");
                         break;
                     case 2:
+                        AppUtil.openActivity(MainActivity.this,"com.android.music");
                         break;
                     case 3:
                         intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -79,6 +82,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         startActivityForResult(intent, 1);
                         break;
                     case 6:
+                        Intent gameIntent = new Intent(MainActivity.this, GameListActivity.class);
+                        gameIntent.putExtra("isSearch", true);
+                        startActivity(gameIntent);
                         break;
                 }
             }
@@ -97,7 +103,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private static final String TAG = "MainActivity";
     DialogBroadcastReceiver dialogBroadcastReceiver;
-
 
     @Override
     protected void onResume() {
