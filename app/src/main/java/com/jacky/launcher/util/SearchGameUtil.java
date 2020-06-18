@@ -78,6 +78,12 @@ public class SearchGameUtil {
             return;
         }
         if (listFiles == null || listFiles.length == 0) {
+            if (listFiles == null) {
+                Log.e(TAG, "getTfcardFileList: " + game.getName() + "listFiles == null" + ",path = " + file.getAbsolutePath());
+            }
+            if (listFiles == null && listFiles.length == 0) {
+                Log.e(TAG, "getTfcardFileList: " + game.getName() + "listFiles.length == 0"+ ",path = " + file.getAbsolutePath());
+            }
             Log.e(TAG, "getTfcardFileList: " + game.getName() + "里面没有游戏！");
 //            Toast.makeText(BaseApplication.getINSTANCE(),  game.getName() + "里面没有游戏！", Toast.LENGTH_SHORT).show();
             return;

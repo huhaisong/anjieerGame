@@ -12,13 +12,16 @@ import com.jacky.launcher.R;
 
 public class LightUtil {
 
-    //系统亮度为0-255
+
+    private static final String TAG = "LightUtil";
     public static void setBrightness(int current, Activity activity) {
+        //系统亮度为0-255
         Settings.System.putInt(BaseApplication.getINSTANCE().getContentResolver(), Settings.System.SCREEN_BRIGHTNESS, current);
         //设置当前activity的屏幕亮度
         WindowManager.LayoutParams lp = activity.getWindow().getAttributes();
         //0到1,调整亮度暗到全亮
-        lp.screenBrightness = (float) current * 255.0f / 255.0f / 255.0f;
+        lp.screenBrightness = (float) current * 255.0f / 255.0f/255.0f;
+        Log.e(TAG, "setBrightness: " +current);
         activity.getWindow().setAttributes(lp);
     }
 

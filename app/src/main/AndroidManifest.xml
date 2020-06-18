@@ -50,9 +50,11 @@
         </activity>
 
         <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:name=".activity.SettingActivity"
             android:screenOrientation="landscape" />
         <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:name=".activity.GameListActivity"
             android:screenOrientation="landscape" />
 

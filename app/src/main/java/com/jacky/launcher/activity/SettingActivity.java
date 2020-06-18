@@ -47,7 +47,7 @@ public class SettingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
         mWifiUtil = new WifiUtil();
-      /*  PermissionsManager.getInstance().requestAllManifestPermissionsIfNecessary(this, new PermissionsResultAction() {
+       /* PermissionsManager.getInstance().requestAllManifestPermissionsIfNecessary(this, new PermissionsResultAction() {
             @Override
             public void onGranted() {
                 Toast.makeText(SettingActivity.this, "所有的权限被拒绝", Toast.LENGTH_SHORT).show();
