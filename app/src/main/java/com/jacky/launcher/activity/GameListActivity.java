@@ -316,7 +316,7 @@ public class GameListActivity extends AppCompatActivity implements RadioGroup.On
             public void onFocusChange(View v, boolean hasFocus, GameEntity gameEntity) {
                 Log.e(TAG, "onFocusChange: " + gameEntity.toString());
                 if (hasFocus) {
-                    videoUrl = "/mnt/external_sd/" + gameEntity.getType() + "/gui/" + gameEntity.getGame() + ".avi";
+                    videoUrl = "/mnt/external_sd/" + gameEntity.getType() + "/gui/" + gameEntity.getName() + ".avi";
                     mHandler.sendEmptyMessage(PLAY_VIDEO_MESSAGE);
                     ivVideo.setVisibility(View.GONE);
                     surfaceView.setVisibility(View.VISIBLE);

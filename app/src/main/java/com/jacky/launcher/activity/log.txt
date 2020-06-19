@@ -1,0 +1,209 @@
+--------- beginning of main
+01-21 17:37:33.576   388   553 V EventHub: /dev/input/event3 got: time=568.760105, type=1, code=28, value=1
+01-21 17:37:33.576   388   553 V EventHub: event time 568760105000, now 568760332562
+01-21 17:37:33.576   388   553 V EventHub: /dev/input/event3 got: time=568.760105, type=0, code=0, value=0
+01-21 17:37:33.576   388   553 V EventHub: event time 568760105000, now 568760332562
+01-21 17:37:33.736   388   553 V EventHub: /dev/input/event3 got: time=568.920117, type=1, code=28, value=0
+01-21 17:37:33.736   388   553 V EventHub: event time 568920117000, now 568920524937
+01-21 17:37:33.736   388   553 V EventHub: /dev/input/event3 got: time=568.920117, type=0, code=0, value=0
+01-21 17:37:33.736   388   553 V EventHub: event time 568920117000, now 568920524937
+01-21 17:37:33.741  1109  1109 E MainActivity: onClick: iv_pic12131296469
+--------- beginning of system
+01-21 17:37:33.743   388   651 I ActivityManager: START u0 {cmp=com.jacky.launcher/.activity.GameListActivity (has extras)} from uid 10055 on display 0
+01-21 17:37:33.757   191   530 D AudioHardwareTiny: start_output_stream
+01-21 17:37:33.759   191   530 D alsa_route: route_info->sound_card 0, route_info->devices 0  
+01-21 17:37:33.759   191   530 D alsa_route: route_set_controls() set route 0
+01-21 17:37:34.100  1109  1109 E GameListActivity: initView: 1 = 3018,2 = 1083
+01-21 17:37:34.101  1109  1109 E GameListActivity: onCheckedChanged: rbtn_sort
+01-21 17:37:34.100   431   431 I Binder_3: type=1400 audit(0.0:327): avc: denied { ioctl } for path="socket:[89812]" dev="sockfs" ino=89812 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:34.100   431   431 I Binder_3: type=1400 audit(0.0:328): avc: denied { ioctl } for path="socket:[89812]" dev="sockfs" ino=89812 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:34.163  1109  1123 D Surface : Surface::final mReqUsage=602
+01-21 17:37:34.263  1109  1109 E GameListActivity: onCheckedChanged: rbtn_total
+01-21 17:37:34.300   419   419 I Binder_2: type=1400 audit(0.0:329): avc: denied { ioctl } for path="socket:[10133]" dev="sockfs" ino=10133 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:34.300   419   419 I Binder_2: type=1400 audit(0.0:330): avc: denied { ioctl } for path="socket:[10133]" dev="sockfs" ino=10133 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:34.312   388   471 I ActivityManager: Displayed com.jacky.launcher/.activity.GameListActivity: +548ms
+01-21 17:37:35.145   388   553 V EventHub: /dev/input/event4 got: time=570.330079, type=1, code=108, value=1
+01-21 17:37:35.146   388   553 V EventHub: event time 570330079000, now 570330299854
+01-21 17:37:35.146   388   553 V EventHub: /dev/input/event4 got: time=570.330079, type=0, code=0, value=0
+01-21 17:37:35.146   388   553 V EventHub: event time 570330079000, now 570330299854
+01-21 17:37:35.153  1109  1109 E GameListActivity: onKey: rbtn_total
+01-21 17:37:35.154  1109  1109 E GameListActivity: onFocusChange: GameEntity{id=8, name='GVGNPlus', chName='机动战士', pinyin='jdzs', visiable=0, type='VPSP'}
+01-21 17:37:35.180   868   868 I Binder_9: type=1400 audit(0.0:331): avc: denied { ioctl } for path="socket:[10133]" dev="sockfs" ino=10133 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:35.197  1109  1109 E GameListActivity: handleMessage8888
+01-21 17:37:35.190   868   868 I Binder_9: type=1400 audit(0.0:332): avc: denied { ioctl } for path="socket:[10133]" dev="sockfs" ino=10133 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:35.200  1109  1109 E MediaPlayerImp: play: /mnt/external_sd/VPSP/gui/VPSP.avi
+01-21 17:37:35.202  1109  1109 W System.err: java.io.IOException: setDataSource failed.
+01-21 17:37:35.202  1109  1109 W System.err: 	at android.media.MediaPlayer.setDataSource(MediaPlayer.java:1274)
+01-21 17:37:35.202  1109  1109 W System.err: 	at android.media.MediaPlayer.setDataSource(MediaPlayer.java:1210)
+01-21 17:37:35.202  1109  1109 W System.err: 	at com.jacky.launcher.media.MediaPlayerImp.play(MediaPlayerImp.java:174)
+01-21 17:37:35.202  1109  1109 W System.err: 	at com.jacky.launcher.activity.GameListActivity$2.handleMessage(GameListActivity.java:161)
+01-21 17:37:35.203  1109  1109 W System.err: 	at android.os.Handler.dispatchMessage(Handler.java:98)
+01-21 17:37:35.203  1109  1109 W System.err: 	at android.os.Looper.loop(Looper.java:148)
+01-21 17:37:35.203  1109  1109 W System.err: 	at android.app.ActivityThread.main(ActivityThread.java:5417)
+01-21 17:37:35.203  1109  1109 W System.err: 	at java.lang.reflect.Method.invoke(Native Method)
+01-21 17:37:35.203  1109  1109 W System.err: 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:746)
+01-21 17:37:35.203  1109  1109 W System.err: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:636)
+01-21 17:37:35.245   388   553 V EventHub: /dev/input/event4 got: time=570.430040, type=1, code=108, value=0
+01-21 17:37:35.245   388   553 V EventHub: event time 570430040000, now 570430130938
+01-21 17:37:35.245   388   553 V EventHub: /dev/input/event4 got: time=570.430040, type=0, code=0, value=0
+01-21 17:37:35.245   388   553 V EventHub: event time 570430040000, now 570430130938
+01-21 17:37:35.645   388   553 V EventHub: /dev/input/event4 got: time=570.830051, type=1, code=108, value=1
+01-21 17:37:35.645   388   553 V EventHub: event time 570830051000, now 570830190271
+01-21 17:37:35.645   388   553 V EventHub: /dev/input/event4 got: time=570.830051, type=0, code=0, value=0
+01-21 17:37:35.645   388   553 V EventHub: event time 570830051000, now 570830190271
+01-21 17:37:35.649  1109  1109 E GameListActivity: onFocusChange: GameEntity{id=8, name='GVGNPlus', chName='机动战士', pinyin='jdzs', visiable=0, type='VPSP'}
+01-21 17:37:35.649  1109  1109 E MediaPlayer: stop called in state 1
+01-21 17:37:35.649  1109  1109 E MediaPlayer: error (-38, 0)
+01-21 17:37:35.650  1109  1109 E GameListActivity: onFocusChange: GameEntity{id=14, name='lumines2', chName='音乐方块2', pinyin='yyfk', visiable=0, type='VPSP'}
+01-21 17:37:35.656  1109  1109 W MediaPlayer: mediaplayer went away with unhandled events
+01-21 17:37:35.660  1109  1109 E GameListActivity: handleMessage8888
+01-21 17:37:35.650   644   644 I Binder_4: type=1400 audit(0.0:333): avc: denied { ioctl } for path="socket:[10133]" dev="sockfs" ino=10133 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:35.650   644   644 I Binder_4: type=1400 audit(0.0:334): avc: denied { ioctl } for path="socket:[10133]" dev="sockfs" ino=10133 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:35.676  1109  1109 E MediaPlayerImp: play: /mnt/external_sd/VPSP/gui/VPSP.avi
+01-21 17:37:35.678  1109  1109 W System.err: java.io.IOException: setDataSource failed.
+01-21 17:37:35.678  1109  1109 W System.err: 	at android.media.MediaPlayer.setDataSource(MediaPlayer.java:1274)
+01-21 17:37:35.678  1109  1109 W System.err: 	at android.media.MediaPlayer.setDataSource(MediaPlayer.java:1210)
+01-21 17:37:35.678  1109  1109 W System.err: 	at com.jacky.launcher.media.MediaPlayerImp.play(MediaPlayerImp.java:174)
+01-21 17:37:35.678  1109  1109 W System.err: 	at com.jacky.launcher.activity.GameListActivity$2.handleMessage(GameListActivity.java:161)
+01-21 17:37:35.678  1109  1109 W System.err: 	at android.os.Handler.dispatchMessage(Handler.java:98)
+01-21 17:37:35.678  1109  1109 W System.err: 	at android.os.Looper.loop(Looper.java:148)
+01-21 17:37:35.679  1109  1109 W System.err: 	at android.app.ActivityThread.main(ActivityThread.java:5417)
+01-21 17:37:35.679  1109  1109 W System.err: 	at java.lang.reflect.Method.invoke(Native Method)
+01-21 17:37:35.679  1109  1109 W System.err: 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:746)
+01-21 17:37:35.679  1109  1109 W System.err: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:636)
+01-21 17:37:35.722   191   530 D AudioFlinger: mixer(0xb3440000) throttle end: throttle time(1)
+01-21 17:37:35.745   388   553 V EventHub: /dev/input/event4 got: time=570.930033, type=1, code=108, value=0
+01-21 17:37:35.746   388   553 V EventHub: event time 570930033000, now 570930187021
+01-21 17:37:35.746   388   553 V EventHub: /dev/input/event4 got: time=570.930033, type=0, code=0, value=0
+01-21 17:37:35.746   388   553 V EventHub: event time 570930033000, now 570930187021
+01-21 17:37:36.695   388   553 V EventHub: /dev/input/event3 got: time=571.880067, type=1, code=28, value=1
+01-21 17:37:36.695   388   553 V EventHub: event time 571880067000, now 571880191438
+01-21 17:37:36.695   388   553 V EventHub: /dev/input/event3 got: time=571.880067, type=0, code=0, value=0
+01-21 17:37:36.696   388   553 V EventHub: event time 571880067000, now 571880191438
+01-21 17:37:36.815   388   553 V EventHub: /dev/input/event3 got: time=572.000094, type=1, code=28, value=0
+01-21 17:37:36.815   388   553 V EventHub: event time 572000094000, now 572000193897
+01-21 17:37:36.815   388   553 V EventHub: /dev/input/event3 got: time=572.000094, type=0, code=0, value=0
+01-21 17:37:36.816   388   553 V EventHub: event time 572000094000, now 572000193897
+01-21 17:37:36.829  1109  1109 E GameListActivity: ROMFile=/mnt/external_sd/VPSP/roms/lumines2.iso
+01-21 17:37:36.829  1109  1109 E GameListActivity: Boot=com.vrt.vpsp
+01-21 17:37:36.829  1109  1109 E GameListActivity: Name=lumines2
+01-21 17:37:36.830   671   671 I Binder_8: type=1400 audit(0.0:335): avc: denied { ioctl } for path="socket:[92553]" dev="sockfs" ino=92553 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:36.840   671   671 I Binder_8: type=1400 audit(0.0:336): avc: denied { ioctl } for path="socket:[92553]" dev="sockfs" ino=92553 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:36.878  1109  1123 D Surface : Surface::final mReqUsage=602
+01-21 17:37:40.266   191   530 D alsa_route: route_set_controls() set route 24
+01-21 17:37:40.266   191   530 D AudioHardwareTiny: close device
+01-21 17:37:40.340   648   648 I Binder_5: type=1400 audit(0.0:337): avc: denied { ioctl } for path="socket:[92562]" dev="sockfs" ino=92562 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:40.340   648   648 I Binder_5: type=1400 audit(0.0:338): avc: denied { ioctl } for path="socket:[92562]" dev="sockfs" ino=92562 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:40.393  1109  1123 D Surface : Surface::final mReqUsage=602
+01-21 17:37:41.046   388   553 V EventHub: /dev/input/event4 got: time=576.230077, type=1, code=108, value=1
+01-21 17:37:41.046   388   553 V EventHub: event time 576230077000, now 576230331815
+01-21 17:37:41.046   388   553 V EventHub: /dev/input/event4 got: time=576.230077, type=0, code=0, value=0
+01-21 17:37:41.046   388   553 V EventHub: event time 576230077000, now 576230331815
+01-21 17:37:41.053  1109  1109 E GameListActivity: onFocusChange: GameEntity{id=14, name='lumines2', chName='音乐方块2', pinyin='yyfk', visiable=0, type='VPSP'}
+01-21 17:37:41.054  1109  1109 E MediaPlayer: stop called in state 1
+01-21 17:37:41.054  1109  1109 E MediaPlayer: error (-38, 0)
+01-21 17:37:41.055  1109  1109 E GameListActivity: onFocusChange: GameEntity{id=16, name='motogp', chName='摩托GP', pinyin='mtgp', visiable=0, type='VPSP'}
+01-21 17:37:41.068  1109  1109 W MediaPlayer: mediaplayer went away with unhandled events
+01-21 17:37:41.070   191   530 D AudioHardwareTiny: start_output_stream
+01-21 17:37:41.071  1109  1109 E GameListActivity: handleMessage8888
+01-21 17:37:41.072   191   530 D alsa_route: route_info->sound_card 0, route_info->devices 0  
+01-21 17:37:41.073   191   530 D alsa_route: route_set_controls() set route 0
+01-21 17:37:41.073  1109  1109 E MediaPlayerImp: play: /mnt/external_sd/VPSP/gui/VPSP.avi
+01-21 17:37:41.060   651   651 I Binder_6: type=1400 audit(0.0:339): avc: denied { ioctl } for path="socket:[10133]" dev="sockfs" ino=10133 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:41.060   651   651 I Binder_6: type=1400 audit(0.0:340): avc: denied { ioctl } for path="socket:[10133]" dev="sockfs" ino=10133 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:41.076  1109  1109 W System.err: java.io.IOException: setDataSource failed.
+01-21 17:37:41.076  1109  1109 W System.err: 	at android.media.MediaPlayer.setDataSource(MediaPlayer.java:1274)
+01-21 17:37:41.076  1109  1109 W System.err: 	at android.media.MediaPlayer.setDataSource(MediaPlayer.java:1210)
+01-21 17:37:41.076  1109  1109 W System.err: 	at com.jacky.launcher.media.MediaPlayerImp.play(MediaPlayerImp.java:174)
+01-21 17:37:41.076  1109  1109 W System.err: 	at com.jacky.launcher.activity.GameListActivity$2.handleMessage(GameListActivity.java:161)
+01-21 17:37:41.076  1109  1109 W System.err: 	at android.os.Handler.dispatchMessage(Handler.java:98)
+01-21 17:37:41.077  1109  1109 W System.err: 	at android.os.Looper.loop(Looper.java:148)
+01-21 17:37:41.077  1109  1109 W System.err: 	at android.app.ActivityThread.main(ActivityThread.java:5417)
+01-21 17:37:41.077  1109  1109 W System.err: 	at java.lang.reflect.Method.invoke(Native Method)
+01-21 17:37:41.077  1109  1109 W System.err: 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:746)
+01-21 17:37:41.077  1109  1109 W System.err: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:636)
+01-21 17:37:41.345   388   553 V EventHub: /dev/input/event4 got: time=576.530021, type=1, code=108, value=0
+01-21 17:37:41.346   388   553 V EventHub: event time 576530021000, now 576530135107
+01-21 17:37:41.346   388   553 V EventHub: /dev/input/event4 got: time=576.530021, type=0, code=0, value=0
+01-21 17:37:41.346   388   553 V EventHub: event time 576530021000, now 576530135107
+01-21 17:37:41.446   388   553 V EventHub: /dev/input/event4 got: time=576.630079, type=1, code=108, value=1
+01-21 17:37:41.446   388   553 V EventHub: event time 576630079000, now 576630348857
+01-21 17:37:41.446   388   553 V EventHub: /dev/input/event4 got: time=576.630079, type=0, code=0, value=0
+01-21 17:37:41.446   388   553 V EventHub: event time 576630079000, now 576630348857
+01-21 17:37:41.453  1109  1109 E GameListActivity: onFocusChange: GameEntity{id=16, name='motogp', chName='摩托GP', pinyin='mtgp', visiable=0, type='VPSP'}
+01-21 17:37:41.453  1109  1109 E MediaPlayer: stop called in state 1
+01-21 17:37:41.453  1109  1109 E MediaPlayer: error (-38, 0)
+01-21 17:37:41.455  1109  1109 E GameListActivity: onFocusChange: GameEntity{id=17, name='nrp-sm2ec', chName='真·三国无双', pinyin='zsgws', visiable=0, type='VPSP'}
+01-21 17:37:41.467  1109  1109 W MediaPlayer: mediaplayer went away with unhandled events
+01-21 17:37:41.469  1109  1109 E GameListActivity: handleMessage8888
+01-21 17:37:41.460   667   667 I Binder_7: type=1400 audit(0.0:341): avc: denied { ioctl } for path="socket:[10133]" dev="sockfs" ino=10133 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:41.460   667   667 I Binder_7: type=1400 audit(0.0:342): avc: denied { ioctl } for path="socket:[10133]" dev="sockfs" ino=10133 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:41.476  1109  1109 E MediaPlayerImp: play: /mnt/external_sd/VPSP/gui/VPSP.avi
+01-21 17:37:41.478  1109  1109 W System.err: java.io.IOException: setDataSource failed.
+01-21 17:37:41.479  1109  1109 W System.err: 	at android.media.MediaPlayer.setDataSource(MediaPlayer.java:1274)
+01-21 17:37:41.479  1109  1109 W System.err: 	at android.media.MediaPlayer.setDataSource(MediaPlayer.java:1210)
+01-21 17:37:41.479  1109  1109 W System.err: 	at com.jacky.launcher.media.MediaPlayerImp.play(MediaPlayerImp.java:174)
+01-21 17:37:41.479  1109  1109 W System.err: 	at com.jacky.launcher.activity.GameListActivity$2.handleMessage(GameListActivity.java:161)
+01-21 17:37:41.479  1109  1109 W System.err: 	at android.os.Handler.dispatchMessage(Handler.java:98)
+01-21 17:37:41.479  1109  1109 W System.err: 	at android.os.Looper.loop(Looper.java:148)
+01-21 17:37:41.479  1109  1109 W System.err: 	at android.app.ActivityThread.main(ActivityThread.java:5417)
+01-21 17:37:41.479  1109  1109 W System.err: 	at java.lang.reflect.Method.invoke(Native Method)
+01-21 17:37:41.479  1109  1109 W System.err: 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:746)
+01-21 17:37:41.479  1109  1109 W System.err: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:636)
+01-21 17:37:41.545   388   553 V EventHub: /dev/input/event4 got: time=576.730039, type=1, code=108, value=0
+01-21 17:37:41.545   388   553 V EventHub: event time 576730039000, now 576730125399
+01-21 17:37:41.545   388   553 V EventHub: /dev/input/event4 got: time=576.730039, type=0, code=0, value=0
+01-21 17:37:41.545   388   553 V EventHub: event time 576730039000, now 576730125399
+01-21 17:37:41.946   388   553 V EventHub: /dev/input/event4 got: time=577.130114, type=1, code=108, value=1
+01-21 17:37:41.946   388   553 V EventHub: event time 577130114000, now 577130338441
+01-21 17:37:41.946   388   553 V EventHub: /dev/input/event4 got: time=577.130114, type=0, code=0, value=0
+01-21 17:37:41.946   388   553 V EventHub: event time 577130114000, now 577130338441
+01-21 17:37:41.954  1109  1109 E GameListActivity: onFocusChange: GameEntity{id=17, name='nrp-sm2ec', chName='真·三国无双', pinyin='zsgws', visiable=0, type='VPSP'}
+01-21 17:37:41.954  1109  1109 E MediaPlayer: stop called in state 1
+01-21 17:37:41.954  1109  1109 E MediaPlayer: error (-38, 0)
+01-21 17:37:41.955  1109  1109 E GameListActivity: onFocusChange: GameEntity{id=18, name='nrp-smrc', chName='真·三国无双2', pinyin='zsgws', visiable=0, type='VPSP'}
+01-21 17:37:41.966  1109  1109 W MediaPlayer: mediaplayer went away with unhandled events
+01-21 17:37:41.960   868   868 I Binder_9: type=1400 audit(0.0:343): avc: denied { ioctl } for path="socket:[10133]" dev="sockfs" ino=10133 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:41.960   868   868 I Binder_9: type=1400 audit(0.0:344): avc: denied { ioctl } for path="socket:[10133]" dev="sockfs" ino=10133 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:41.969  1109  1109 E GameListActivity: handleMessage8888
+01-21 17:37:41.975  1109  1109 E MediaPlayerImp: play: /mnt/external_sd/VPSP/gui/VPSP.avi
+01-21 17:37:41.976  1109  1109 W System.err: java.io.IOException: setDataSource failed.
+01-21 17:37:41.977  1109  1109 W System.err: 	at android.media.MediaPlayer.setDataSource(MediaPlayer.java:1274)
+01-21 17:37:41.977  1109  1109 W System.err: 	at android.media.MediaPlayer.setDataSource(MediaPlayer.java:1210)
+01-21 17:37:41.977  1109  1109 W System.err: 	at com.jacky.launcher.media.MediaPlayerImp.play(MediaPlayerImp.java:174)
+01-21 17:37:41.977  1109  1109 W System.err: 	at com.jacky.launcher.activity.GameListActivity$2.handleMessage(GameListActivity.java:161)
+01-21 17:37:41.977  1109  1109 W System.err: 	at android.os.Handler.dispatchMessage(Handler.java:98)
+01-21 17:37:41.977  1109  1109 W System.err: 	at android.os.Looper.loop(Looper.java:148)
+01-21 17:37:41.977  1109  1109 W System.err: 	at android.app.ActivityThread.main(ActivityThread.java:5417)
+01-21 17:37:41.977  1109  1109 W System.err: 	at java.lang.reflect.Method.invoke(Native Method)
+01-21 17:37:41.977  1109  1109 W System.err: 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:746)
+01-21 17:37:41.977  1109  1109 W System.err: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:636)
+01-21 17:37:42.020   191   530 D AudioFlinger: mixer(0xb3440000) throttle end: throttle time(1)
+01-21 17:37:42.146   388   553 V EventHub: /dev/input/event4 got: time=577.330107, type=1, code=108, value=0
+01-21 17:37:42.146   388   553 V EventHub: event time 577330107000, now 577330354691
+01-21 17:37:42.146   388   553 V EventHub: /dev/input/event4 got: time=577.330107, type=0, code=0, value=0
+01-21 17:37:42.146   388   553 V EventHub: event time 577330107000, now 577330354691
+01-21 17:37:42.516   388   553 V EventHub: /dev/input/event3 got: time=577.700190, type=1, code=28, value=1
+01-21 17:37:42.516   388   553 V EventHub: event time 577700190000, now 577700452274
+01-21 17:37:42.516   388   553 V EventHub: /dev/input/event3 got: time=577.700190, type=0, code=0, value=0
+01-21 17:37:42.516   388   553 V EventHub: event time 577700190000, now 577700452274
+01-21 17:37:42.646   388   553 V EventHub: /dev/input/event3 got: time=577.830146, type=1, code=28, value=0
+01-21 17:37:42.646   388   553 V EventHub: event time 577830146000, now 577830329691
+01-21 17:37:42.646   388   553 V EventHub: /dev/input/event3 got: time=577.830146, type=0, code=0, value=0
+01-21 17:37:42.646   388   553 V EventHub: event time 577830146000, now 577830329691
+01-21 17:37:42.662  1109  1109 E GameListActivity: ROMFile=/mnt/external_sd/VPSP/roms/nrp-smrc.iso
+01-21 17:37:42.662  1109  1109 E GameListActivity: Boot=com.vrt.vpsp
+01-21 17:37:42.662  1109  1109 E GameListActivity: Name=nrp-smrc
+01-21 17:37:42.670   418   418 I Binder_1: type=1400 audit(0.0:345): avc: denied { ioctl } for path="socket:[92576]" dev="sockfs" ino=92576 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:42.670   418   418 I Binder_1: type=1400 audit(0.0:346): avc: denied { ioctl } for path="socket:[92576]" dev="sockfs" ino=92576 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:42.707  1109  1123 D Surface : Surface::final mReqUsage=602
+01-21 17:37:42.718   191   530 D AudioFlinger: mixer(0xb3440000) throttle end: throttle time(1)
+01-21 17:37:46.095   191   530 D alsa_route: route_set_controls() set route 24
+01-21 17:37:46.096   191   530 D AudioHardwareTiny: close device
+01-21 17:37:46.160   868   868 I Binder_9: type=1400 audit(0.0:347): avc: denied { ioctl } for path="socket:[93521]" dev="sockfs" ino=93521 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:46.160   868   868 I Binder_9: type=1400 audit(0.0:348): avc: denied { ioctl } for path="socket:[93521]" dev="sockfs" ino=93521 ioctlcmd=7704 scontext=u:r:system_server:s0 tcontext=u:r:system_server:s0 tclass=unix_stream_socket permissive=1
+01-21 17:37:46.202  1109  1123 D Surface : Surface::final mReqUsage=602
+01-21 17:37:55.836   607   628 I art     : Starting a blocking GC Alloc
+01-21 17:37:55.836   607   628 I art     : Starting a blocking GC Alloc
+01-21 17:37:56.077   388   448 V EventHub: wake() called
+01-21 17:37:56.077   388   553 V EventHub: awoken after wake()
