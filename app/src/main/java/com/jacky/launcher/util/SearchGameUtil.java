@@ -74,18 +74,14 @@ public class SearchGameUtil {
             listFiles = file.list();
         } else {
             Log.e(TAG, "getTfcardFileList: " + "没有找到" + game.getName() + "文件夹！");
-//            Toast.makeText(BaseApplication.getINSTANCE(), "没有找到" + game.getName() + "文件夹！", Toast.LENGTH_SHORT).show();
             return;
         }
         if (listFiles == null || listFiles.length == 0) {
             if (listFiles == null) {
                 Log.e(TAG, "getTfcardFileList: " + game.getName() + "listFiles == null" + ",path = " + file.getAbsolutePath());
+                return;
             }
-            if (listFiles == null && listFiles.length == 0) {
-                Log.e(TAG, "getTfcardFileList: " + game.getName() + "listFiles.length == 0"+ ",path = " + file.getAbsolutePath());
-            }
-            Log.e(TAG, "getTfcardFileList: " + game.getName() + "里面没有游戏！");
-//            Toast.makeText(BaseApplication.getINSTANCE(),  game.getName() + "里面没有游戏！", Toast.LENGTH_SHORT).show();
+            Log.e(TAG, "getTfcardFileList: " + game.getName() + "listFiles.length == 0" + ",path = " + file.getAbsolutePath());
             return;
         }
         Arrays.sort(listFiles);

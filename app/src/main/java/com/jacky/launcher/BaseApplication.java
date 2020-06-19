@@ -6,11 +6,15 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
 
+import com.jacky.launcher.activity.SettingActivity;
 import com.jacky.launcher.dao.DaoMaster;
 import com.jacky.launcher.dao.DaoSession;
 import com.jacky.launcher.util.DBUtil;
 import com.jacky.launcher.util.SearchGameUtil;
+import com.jacky.launcher.util.runtimepermissions.PermissionsManager;
+import com.jacky.launcher.util.runtimepermissions.PermissionsResultAction;
 import com.kongzue.dialog.v3.WaitDialog;
 import com.tencent.mmkv.MMKV;
 
@@ -26,14 +30,7 @@ public class BaseApplication extends Application {
         super.onCreate();
         INSTANCE = this;
         MMKV.initialize(this);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-
-                initGreenDao();
-                SearchGameUtil.searchROMList(BaseApplication.this);
-            }
-        }).start();
+        initGreenDao();
     }
 
     public static BaseApplication getINSTANCE() {

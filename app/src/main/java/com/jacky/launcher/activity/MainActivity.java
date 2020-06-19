@@ -6,6 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -13,8 +14,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 
+import androidx.annotation.NonNull;
+
+import com.jacky.launcher.BaseApplication;
 import com.jacky.launcher.R;
 import com.jacky.launcher.adapter.AppAdapter;
 import com.jacky.launcher.broadcast.DialogBroadcastReceiver;
@@ -22,6 +27,8 @@ import com.jacky.launcher.config.Game;
 import com.jacky.launcher.model.AppModel;
 import com.jacky.launcher.util.AppUtil;
 import com.jacky.launcher.util.SearchGameUtil;
+import com.jacky.launcher.util.runtimepermissions.PermissionsManager;
+import com.jacky.launcher.util.runtimepermissions.PermissionsResultAction;
 import com.kongzue.dialog.v3.WaitDialog;
 
 import java.util.ArrayList;
@@ -40,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         List<AppModel> appModels = new ArrayList<>();
+
+
         for (int i = 0; i < 7; i++) {
             AppModel provinceBean = new AppModel();
             provinceBean.setTitle(appName[i]);
@@ -62,10 +71,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     case 0:
                         break;
                     case 1:
-                        AppUtil.openActivity(MainActivity.this,"com.kk.xx.newplayer");
+                        AppUtil.openActivity(MainActivity.this, "com.kk.xx.newplayer");
                         break;
                     case 2:
-                        AppUtil.openActivity(MainActivity.this,"com.android.music");
+                        AppUtil.openActivity(MainActivity.this, "com.android.music");
                         break;
                     case 3:
                         intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -116,6 +125,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         intentFilter.addAction(DialogBroadcastReceiver.SHOW_DIALOG);
         dialogBroadcastReceiver = new DialogBroadcastReceiver();
         registerReceiver(dialogBroadcastReceiver, intentFilter);
+
+        PermissionsManager.getInstance().requestAllManifestPermissionsIfNecessary(this, new PermissionsResultAction() {
+            @Override
+            public void onGranted() {
+                Toast.makeText(MainActivity.this, "所有的权限被拒绝", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onDenied(String permission) {
+                Toast.makeText(MainActivity.this, "权限 " + permission + "被拒绝", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -165,6 +186,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 Log.e(TAG, "onClick: iv_pic7" + v.getId());
                 break;
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        for (int i = 0; i < permissions.length; i++) {
+            if (permissions[i].equals("android.permission.READ_EXTERNAL_STORAGE")&&grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        SearchGameUtil.searchROMList(MainActivity.this);
+                    }
+                }).start();
+            }else {
+                finish();
+            }
+            Log.e(TAG, "onRequestPermissionsResult: " + permissions[i]);
         }
     }
 }
