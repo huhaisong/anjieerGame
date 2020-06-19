@@ -125,7 +125,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         intentFilter.addAction(DialogBroadcastReceiver.SHOW_DIALOG);
         dialogBroadcastReceiver = new DialogBroadcastReceiver();
         registerReceiver(dialogBroadcastReceiver, intentFilter);
-
         PermissionsManager.getInstance().requestAllManifestPermissionsIfNecessary(this, new PermissionsResultAction() {
             @Override
             public void onGranted() {
@@ -193,15 +192,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         for (int i = 0; i < permissions.length; i++) {
-            if (permissions[i].equals("android.permission.READ_EXTERNAL_STORAGE")&&grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (permissions[i].equals("android.permission.READ_EXTERNAL_STORAGE") && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
                         SearchGameUtil.searchROMList(MainActivity.this);
                     }
                 }).start();
-            }else {
-                finish();
             }
             Log.e(TAG, "onRequestPermissionsResult: " + permissions[i]);
         }

@@ -64,7 +64,6 @@ public class SearchGameUtil {
         }
     };
 
-
     private static void getTfcardFileList(Game game, Context context) {
         int j;
         String Name;

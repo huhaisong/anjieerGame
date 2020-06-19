@@ -1,5 +1,6 @@
 package com.jacky.launcher;
 
+import android.Manifest;
 import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
@@ -8,6 +9,7 @@ import android.content.res.Resources;
 import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
 
+import com.jacky.launcher.activity.MainActivity;
 import com.jacky.launcher.activity.SettingActivity;
 import com.jacky.launcher.dao.DaoMaster;
 import com.jacky.launcher.dao.DaoSession;
@@ -31,6 +33,15 @@ public class BaseApplication extends Application {
         INSTANCE = this;
         MMKV.initialize(this);
         initGreenDao();
+
+        if (PermissionsManager.getInstance().hasPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    SearchGameUtil.searchROMList(BaseApplication.this);
+                }
+            }).start();
+        }
     }
 
     public static BaseApplication getINSTANCE() {
