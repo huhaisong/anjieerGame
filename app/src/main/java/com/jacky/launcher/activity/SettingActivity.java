@@ -49,9 +49,7 @@ public class SettingActivity extends AppCompatActivity {
         initListener();
     }
 
-
     private boolean isOnResum = false;
-
 
     @Override
     protected void onResume() {
@@ -70,6 +68,13 @@ public class SettingActivity extends AppCompatActivity {
         super.onPause();
         isOnResum = false;
         unregisterReceiver(dialogBroadcastReceiver);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent it1 = new Intent(SettingActivity.this, MainActivity.class);
+        startActivity(it1);
+        finish();
     }
 
     private void initListener() {

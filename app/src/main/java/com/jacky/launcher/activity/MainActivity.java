@@ -40,7 +40,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private RecyclerView mGridView;
-    private String[] appName = new String[]{"主题", "视频", "音乐", "图库", "设置", "文件", "搜索"};
+
     private int[] appDrawable = new int[]{R.mipmap.app_8, R.mipmap.app_1, R.mipmap.app_2, R.mipmap.app_6, R.mipmap.app_5, R.mipmap.app_6, R.mipmap.app_7};
 
     private AppAdapter appAdapter;
@@ -50,7 +50,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         LanguageUtil.switchLanguage(this, MMKVUtil.getLanguage());
         setContentView(R.layout.activity_main);
+        findViewById(R.id.iv_pic1).setOnClickListener(this);
+        findViewById(R.id.iv_pic2).setOnClickListener(this);
+        findViewById(R.id.iv_pic3).setOnClickListener(this);
+        findViewById(R.id.iv_pic4).setOnClickListener(this);
+        findViewById(R.id.iv_pic5).setOnClickListener(this);
+        findViewById(R.id.iv_pic6).setOnClickListener(this);
+        findViewById(R.id.iv_pic7).setOnClickListener(this);
+    }
+
+    private static final String TAG = "MainActivity";
+    DialogBroadcastReceiver dialogBroadcastReceiver;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e(TAG, "onResume: " + SearchGameUtil.isSearching);
+        LightUtil.setBrightness(MMKVUtil.getLightState(), this);
+        if (SearchGameUtil.isSearching) {
+            WaitDialog.show(this, "正在扫描请耐心等待！");
+        }
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(DialogBroadcastReceiver.DISMISS_DIALOG);
+        intentFilter.addAction(DialogBroadcastReceiver.SHOW_DIALOG);
+        dialogBroadcastReceiver = new DialogBroadcastReceiver();
+        registerReceiver(dialogBroadcastReceiver, intentFilter);
         List<AppModel> appModels = new ArrayList<>();
+        String[] appName = new String[]{getResources().getString(R.string.theme),
+                getResources().getString(R.string.video), getResources().getString(R.string.music),
+                getResources().getString(R.string.Gallery), getResources().getString(R.string.setting),
+                getResources().getString(R.string.folder), getResources().getString(R.string.search)};
         for (int i = 0; i < 7; i++) {
             AppModel provinceBean = new AppModel();
             provinceBean.setTitle(appName[i]);
@@ -71,6 +100,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent;
                 switch (position) {
                     case 0:
+                        intent = new Intent(MainActivity.this, ThemeSelectActivity.class);
+                        startActivity(intent);
                         break;
                     case 1:
                         AppUtil.openActivity(MainActivity.this, "com.kk.xx.newplayer");
@@ -103,31 +134,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         mGridView.setLayoutManager(new GridLayoutManager(this, 7));
-        findViewById(R.id.iv_pic1).setOnClickListener(this);
-        findViewById(R.id.iv_pic2).setOnClickListener(this);
-        findViewById(R.id.iv_pic3).setOnClickListener(this);
-        findViewById(R.id.iv_pic4).setOnClickListener(this);
-        findViewById(R.id.iv_pic5).setOnClickListener(this);
-        findViewById(R.id.iv_pic6).setOnClickListener(this);
-        findViewById(R.id.iv_pic7).setOnClickListener(this);
-    }
-
-    private static final String TAG = "MainActivity";
-    DialogBroadcastReceiver dialogBroadcastReceiver;
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.e(TAG, "onResume: " + SearchGameUtil.isSearching);
-        LightUtil.setBrightness(MMKVUtil.getLightState(), this);
-        if (SearchGameUtil.isSearching) {
-            WaitDialog.show(this, "正在扫描请耐心等待！");
-        }
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(DialogBroadcastReceiver.DISMISS_DIALOG);
-        intentFilter.addAction(DialogBroadcastReceiver.SHOW_DIALOG);
-        dialogBroadcastReceiver = new DialogBroadcastReceiver();
-        registerReceiver(dialogBroadcastReceiver, intentFilter);
         PermissionsManager.getInstance().requestAllManifestPermissionsIfNecessary(this, new PermissionsResultAction() {
             @Override
             public void onGranted() {
@@ -199,6 +205,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
+                        Log.e(TAG, "run: start searchROMList");
                         SearchGameUtil.searchROMList(MainActivity.this);
                     }
                 }).start();

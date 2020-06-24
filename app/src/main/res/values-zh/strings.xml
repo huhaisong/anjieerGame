@@ -23,9 +23,13 @@
     <string name="light">亮度</string>
     <string name="auto_lock">自动锁屏：</string>
     <string name="long_ligth">长亮</string>
-    <string name="theme">主题</string>
     <string name="system_info">系统信息</string>
     <string name="current_is_newest_version">目前为最新版本</string>
     <string name="back">返回</string>
+    <string name="theme">主题</string>
+    <string name="video">视频</string>
+    <string name="music">音乐</string>
+    <string name="Gallery">图库</string>
+    <string name="folder">文件</string>
 
 </resources>

@@ -1,0 +1,17 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_container"
+    android:layout_width="@dimen/x640"
+    android:layout_height="@dimen/y480"
+    android:background="@mipmap/bj"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/y10"
+        android:background="@mipmap/app_rv_bg"
+        android:clipChildren="false"
+        android:scrollbars="none" />
+</LinearLayout>

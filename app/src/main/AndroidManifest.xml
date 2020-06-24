@@ -56,6 +56,11 @@
             android:name=".activity.GameListActivity"
             android:screenOrientation="landscape" />
 
+        <activity
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:name=".activity.ThemeSelectActivity"
+            android:screenOrientation="landscape" />
+
         <receiver android:name=".broadcastreceive.TFCardReceive">
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_MOUNTED" />

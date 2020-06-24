@@ -26,4 +26,8 @@
     <string name="system_info">System message</string>
     <string name="current_is_newest_version">Currently the latest version</string>
     <string name="back">back</string>
+    <string name="video">video</string>
+    <string name="music">music</string>
+    <string name="Gallery">Gallery</string>
+    <string name="folder">folder</string>
 </resources>
