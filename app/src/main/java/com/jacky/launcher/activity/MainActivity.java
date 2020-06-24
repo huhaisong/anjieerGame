@@ -26,6 +26,9 @@ import com.jacky.launcher.broadcast.DialogBroadcastReceiver;
 import com.jacky.launcher.config.Game;
 import com.jacky.launcher.model.AppModel;
 import com.jacky.launcher.util.AppUtil;
+import com.jacky.launcher.util.LanguageUtil;
+import com.jacky.launcher.util.LightUtil;
+import com.jacky.launcher.util.MMKVUtil;
 import com.jacky.launcher.util.SearchGameUtil;
 import com.jacky.launcher.util.runtimepermissions.PermissionsManager;
 import com.jacky.launcher.util.runtimepermissions.PermissionsResultAction;
@@ -45,10 +48,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        LanguageUtil.switchLanguage(this, MMKVUtil.getLanguage());
         setContentView(R.layout.activity_main);
         List<AppModel> appModels = new ArrayList<>();
-
-
         for (int i = 0; i < 7; i++) {
             AppModel provinceBean = new AppModel();
             provinceBean.setTitle(appName[i]);
@@ -117,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onResume() {
         super.onResume();
         Log.e(TAG, "onResume: " + SearchGameUtil.isSearching);
+        LightUtil.setBrightness(MMKVUtil.getLightState(), this);
         if (SearchGameUtil.isSearching) {
             WaitDialog.show(this, "正在扫描请耐心等待！");
         }

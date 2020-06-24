@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">GameLauncher</string>
+    <string name="search_game">Search games</string>
+    <string name="select_game">Choose game</string>
+    <string name="search">search</string>
+    <string name="recently">recent</string>
+    <string name="sort">sort</string>
+    <string name="total">total</string>
+    <string name="FC_game">FC GAME</string>
+    <string name="PSP_game">PSP GAME</string>
+    <string name="MD_game">MD GAME</string>
+    <string name="SFC_game">SFC GAME</string>
+    <string name="GBA_game">GBA GAME</string>
+    <string name="N64_game">N64 GAME</string>
+    <string name="jieji_game">arcade games</string>
+    <string name="bluetooth">bluetooth</string>
+    <string name="on">on</string>
+    <string name="off">off</string>
+    <string name="setting">Setting</string>
+    <string name="wifi">WIFI</string>
+    <string name="press_voice">Key Sound</string>
+    <string name="light">Brightness</string>
+    <string name="auto_lock">Auto lock screen：</string>
+    <string name="long_ligth">Long bright</string>
+    <string name="theme">Theme</string>
+    <string name="system_info">System message</string>
+    <string name="current_is_newest_version">Currently the latest version</string>
+    <string name="back">back</string>
+</resources>

@@ -112,6 +112,8 @@ public class SearchGameUtil {
     public static Boolean isSearching = false;
 
     public static void searchROMList(Context context) { // at bootup or insert tfcard
+        if (isSearching)
+            return;
         isSearching = true;
         Intent intent = new Intent(DialogBroadcastReceiver.SHOW_DIALOG);
         context.sendBroadcast(intent);

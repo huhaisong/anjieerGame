@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
@@ -25,9 +26,10 @@ public class GameAdapter extends BaseQuickAdapter<GameEntity, BaseViewHolder> im
     }
 
     @Override
-    protected void convert(@NotNull BaseViewHolder baseViewHolder, final GameEntity gameEntity) {
+    protected void convert(@NotNull final BaseViewHolder baseViewHolder, final GameEntity gameEntity) {
         baseViewHolder.setText(R.id.tv_title, gameEntity.getChName());
-        baseViewHolder.setText(R.id.tv_number, baseViewHolder.getAdapterPosition()+"");
+        baseViewHolder.setText(R.id.tv_number, baseViewHolder.getAdapterPosition() + "");
+        final TextView title = baseViewHolder.getView(R.id.tv_title);
         baseViewHolder.itemView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -36,8 +38,10 @@ public class GameAdapter extends BaseQuickAdapter<GameEntity, BaseViewHolder> im
                 }
                 if (hasFocus) {
                     v.setAlpha(1.0f);
+                    title.setTextColor(mContext.getResources().getColor(R.color.red));
                 } else {
                     v.setAlpha(0.6f);
+                    title.setTextColor(mContext.getResources().getColor(R.color.black));
                 }
             }
         });

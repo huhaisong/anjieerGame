@@ -41,6 +41,8 @@ import com.jacky.launcher.daomanager.RecentGameDaoManager;
 import com.jacky.launcher.entity.GameEntity;
 import com.jacky.launcher.entity.RecentGameEntity;
 import com.jacky.launcher.media.MediaPlayerImp;
+import com.jacky.launcher.util.LanguageUtil;
+import com.jacky.launcher.util.LightUtil;
 import com.jacky.launcher.util.MMKVUtil;
 
 import java.io.File;
@@ -69,6 +71,7 @@ public class GameListActivity extends AppCompatActivity implements RadioGroup.On
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        LanguageUtil.switchLanguage(this, MMKVUtil.getLanguage());
         setContentView(R.layout.activity_sort);
         initView();
         initClickListen();
@@ -179,6 +182,7 @@ public class GameListActivity extends AppCompatActivity implements RadioGroup.On
     @Override
     protected void onResume() {
         super.onResume();
+        LightUtil.setBrightness(MMKVUtil.getLightState(), this);
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(DialogBroadcastReceiver.DISMISS_DIALOG);
         intentFilter.addAction(DialogBroadcastReceiver.SHOW_DIALOG);

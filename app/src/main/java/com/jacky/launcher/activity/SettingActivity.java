@@ -1,11 +1,10 @@
 package com.jacky.launcher.activity;
 
-import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -17,27 +16,24 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
 import com.jacky.launcher.R;
 import com.jacky.launcher.broadcast.DialogBroadcastReceiver;
 import com.jacky.launcher.util.AppUtil;
+import com.jacky.launcher.util.LanguageUtil;
 import com.jacky.launcher.util.LightUtil;
 import com.jacky.launcher.util.MMKVUtil;
 import com.jacky.launcher.util.WifiUtil;
-import com.jacky.launcher.util.runtimepermissions.PermissionsManager;
-import com.jacky.launcher.util.runtimepermissions.PermissionsResultAction;
 
 public class SettingActivity extends AppCompatActivity {
-    private static final String[] name = {"汉语", "English"};
+    private static final String[] name = {"English", "汉语"};
     private Spinner languageSpinner, themeSpinner;
     private ArrayAdapter languageAdapter, themeAdapter;
     private Switch wifiSwitch, bluetoothSwitch, voiceSwitch;
     private SeekBar lightSeekBar;
     private RadioGroup radioGroup;
-
     private WifiUtil mWifiUtil;
     private BluetoothAdapter mBluetoothAdapter;
     private DialogBroadcastReceiver dialogBroadcastReceiver;
@@ -45,48 +41,68 @@ public class SettingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        LanguageUtil.switchLanguage(this, MMKVUtil.getLanguage());
+        isOnResum = false;
         setContentView(R.layout.activity_setting);
         mWifiUtil = new WifiUtil();
-
         initView();
         initListener();
     }
+
+
+    private boolean isOnResum = false;
 
 
     @Override
     protected void onResume() {
         super.onResume();
         IntentFilter intentFilter = new IntentFilter();
+        LightUtil.setBrightness(MMKVUtil.getLightState(), this);
         intentFilter.addAction(DialogBroadcastReceiver.DISMISS_DIALOG);
         intentFilter.addAction(DialogBroadcastReceiver.SHOW_DIALOG);
         dialogBroadcastReceiver = new DialogBroadcastReceiver();
         registerReceiver(dialogBroadcastReceiver, intentFilter);
+        Log.e(TAG, "onResume: ");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        isOnResum = false;
         unregisterReceiver(dialogBroadcastReceiver);
     }
 
     private void initListener() {
-
         findViewById(R.id.tv_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
-
         languageSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                Log.e(TAG, "onItemSelected: " + position);
+                if (!isOnResum) {
+                    isOnResum = true;
+                    return;
+                }
+                if (position == 0) {
+                    LanguageUtil.switchLanguage(SettingActivity.this, "chinese");
+                    finish();
+                    Intent it1 = new Intent(SettingActivity.this, SettingActivity.class);
+                    startActivity(it1);
+                } else {
+                    LanguageUtil.switchLanguage(SettingActivity.this, "english");
+                    finish();
+                    Intent it1 = new Intent(SettingActivity.this, SettingActivity.class);
+                    startActivity(it1);
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                Log.e(TAG, "onNothingSelected: ");
             }
         });
 
@@ -228,14 +244,21 @@ public class SettingActivity extends AppCompatActivity {
         voiceSwitch = findViewById(R.id.switch_voice);
         wifiSwitch = findViewById(R.id.switch_wifi);
         bluetoothSwitch = findViewById(R.id.switch_bluetooth);
+
+
         languageSpinner = findViewById(R.id.spinner_language);
         languageAdapter = new ArrayAdapter<>(this, R.layout.spinner_item, name);
         languageAdapter.setDropDownViewResource(R.layout.dropdown_style);
         languageSpinner.setAdapter(languageAdapter);
+        if (MMKVUtil.getLanguage().equals("english")) {
+            languageSpinner.setSelection(1);
+        } else {
+            languageSpinner.setSelection(0);
+        }
         themeSpinner = findViewById(R.id.spinner_theme);
         themeAdapter = new ArrayAdapter<>(this, R.layout.spinner_item, name);
         themeAdapter.setDropDownViewResource(R.layout.dropdown_style);
-        themeSpinner.setAdapter(languageAdapter);
+        themeSpinner.setAdapter(themeAdapter);
         lightSeekBar = findViewById(R.id.sb_light);
         radioGroup = findViewById(R.id.rgroup);
         TextView appVersion = findViewById(R.id.tv_app_version);

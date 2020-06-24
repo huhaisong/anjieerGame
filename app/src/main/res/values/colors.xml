@@ -23,4 +23,5 @@
     <color name="main_white">#ffffff</color>
     <color name="main_black">#212832</color>
     <color name="textColorHint">#6D8DC0</color>
+    <color name="red">#C90808</color>
 </resources>

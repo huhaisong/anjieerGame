@@ -41,7 +41,7 @@
                         android:layout_alignParentBottom="true"
                         android:layout_marginLeft="@dimen/x5"
                         android:layout_marginBottom="@dimen/x5"
-                        android:text="街机游戏"
+                        android:text="@string/jieji_game"
                         android:textColor="@color/white" />
                 </RelativeLayout>
 
@@ -65,7 +65,7 @@
                         android:layout_alignParentBottom="true"
                         android:layout_marginLeft="@dimen/x5"
                         android:layout_marginBottom="@dimen/x5"
-                        android:text="N64游戏"
+                        android:text="@string/N64_game"
                         android:textColor="@color/white" />
                 </RelativeLayout>
 
@@ -99,7 +99,7 @@
                         android:layout_alignParentBottom="true"
                         android:layout_marginLeft="@dimen/x5"
                         android:layout_marginBottom="@dimen/x5"
-                        android:text="FC游戏"
+                        android:text="@string/FC_game"
                         android:textColor="@color/white" />
                 </RelativeLayout>
 
@@ -125,7 +125,7 @@
                         android:layout_alignParentBottom="true"
                         android:layout_marginLeft="@dimen/x5"
                         android:layout_marginBottom="@dimen/x5"
-                        android:text="PSP游戏"
+                        android:text="@string/PSP_game"
                         android:textColor="@color/white" />
                 </RelativeLayout>
 
@@ -150,7 +150,7 @@
                         android:layout_alignParentBottom="true"
                         android:layout_marginLeft="@dimen/x5"
                         android:layout_marginBottom="@dimen/x5"
-                        android:text="MD游戏"
+                        android:text="@string/MD_game"
                         android:textColor="@color/white" />
                 </RelativeLayout>
 
@@ -174,7 +174,7 @@
                         android:layout_alignParentBottom="true"
                         android:layout_marginLeft="@dimen/x5"
                         android:layout_marginBottom="@dimen/x5"
-                        android:text="SFC游戏"
+                        android:text="@string/SFC_game"
                         android:textColor="@color/white" />
                 </RelativeLayout>
             </LinearLayout>
@@ -200,7 +200,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="@dimen/x5"
                 android:layout_marginBottom="@dimen/x5"
-                android:text="GBA游戏"
+                android:text="@string/GBA_game"
                 android:textColor="@color/white" />
         </RelativeLayout>
     </LinearLayout>

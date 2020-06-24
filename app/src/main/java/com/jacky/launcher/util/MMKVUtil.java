@@ -22,11 +22,11 @@ public class MMKVUtil {
         mmkv.encode(Config.LIGHT_SETTING, lightSetting);
     }
 
-    public static int getLanguage() {
-        return mmkv.getInt(Config.LANGUAGE, 180);
+    public static String getLanguage() {
+        return mmkv.getString(Config.LANGUAGE,"null");
     }
 
-    public static void setLanguage(int language) {
+    public static void setLanguage(String language) {
         mmkv.encode(Config.LANGUAGE, language);
     }
 

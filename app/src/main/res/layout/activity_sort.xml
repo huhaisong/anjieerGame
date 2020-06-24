@@ -32,7 +32,7 @@
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:gravity="center"
-                android:text="全部"
+              android:text="@string/total"
                 android:textColor="@drawable/selector_tv_color"
                 android:textSize="16sp" />
 
@@ -46,7 +46,7 @@
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:gravity="center"
-                android:text="分类"
+              android:text="@string/sort"
                 android:textColor="@drawable/selector_tv_color"
                 android:textSize="16sp" />
 
@@ -60,7 +60,7 @@
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:gravity="center"
-                android:text="最近"
+              android:text="@string/recently"
                 android:textColor="@drawable/selector_tv_color"
                 android:textSize="16sp" />
 
@@ -74,7 +74,7 @@
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:gravity="center"
-                android:text="搜索"
+                android:text="@string/search"
                 android:textColor="@drawable/selector_tv_color"
                 android:textSize="16sp" />
         </RadioGroup>
@@ -149,7 +149,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:text="选择游戏"
+                android:text="@string/select_game"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
@@ -180,7 +180,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:text="选择游戏"
+                android:text="@string/select_game"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
@@ -219,7 +219,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:text="搜索游戏"
+               android:text="@string/search_game"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
         </RelativeLayout>

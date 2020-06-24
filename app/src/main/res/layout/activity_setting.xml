@@ -20,7 +20,7 @@
             android:background="@mipmap/setting_title"
             android:gravity="center_horizontal"
             android:paddingTop="@dimen/y6"
-            android:text="设置"
+            android:text="@string/setting"
             android:textColor="#FFF100"
             android:textSize="20px" />
 
@@ -48,7 +48,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:focusable="false"
-                    android:text="蓝牙"
+                    android:text="@string/bluetooth"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
 
@@ -58,8 +58,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/x10"
                     android:switchMinWidth="@dimen/x1"
-                    android:textOff="关"
-                    android:textOn="开"
+                    android:textOff="@string/off"
+                    android:textOn="@string/on"
                     android:thumb="@mipmap/switch_on"
                     android:track="@drawable/switch_custom_track_on" />
             </LinearLayout>
@@ -75,7 +75,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:focusable="false"
-                    android:text="无线WIFI"
+                    android:text="@string/wifi"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
 
@@ -85,8 +85,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/x10"
                     android:switchMinWidth="@dimen/x1"
-                    android:textOff="关"
-                    android:textOn="开"
+                    android:textOff="@string/off"
+                    android:textOn="@string/on"
                     android:thumb="@mipmap/switch_on"
                     android:track="@drawable/switch_custom_track_on" />
             </LinearLayout>
@@ -102,7 +102,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:focusable="false"
-                    android:text="按键声音"
+                    android:text="@string/press_voice"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
 
@@ -112,8 +112,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/x10"
                     android:switchMinWidth="@dimen/x1"
-                    android:textOff="关"
-                    android:textOn="开"
+                    android:textOff="@string/off"
+                    android:textOn="@string/on"
                     android:thumb="@mipmap/switch_on"
                     android:track="@drawable/switch_custom_track_on" />
             </LinearLayout>
@@ -129,7 +129,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="亮度"
+                android:text="@string/light"
                 android:textColor="@color/white" />
 
             <SeekBar
@@ -157,7 +157,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="自动锁屏："
+                android:text="@string/auto_lock"
                 android:textColor="@color/white" />
 
             <RadioGroup
@@ -199,7 +199,7 @@
                     android:id="@+id/rb5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="长亮"
+                    android:text="@string/long_ligth"
                     android:textColor="@color/white" />
             </RadioGroup>
         </LinearLayout>
@@ -229,7 +229,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/x30"
-                android:text="主题"
+                android:text="@string/theme"
                 android:textColor="@color/white" />
 
             <Spinner
@@ -250,7 +250,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="系统信息"
+                android:text="@string/system_info"
                 android:textColor="@color/white" />
 
             <TextView
@@ -260,7 +260,7 @@
                 android:layout_marginLeft="@dimen/x20"
                 android:background="@mipmap/setting_information"
                 android:gravity="center"
-                android:text="目前为最新版本"
+                android:text="@string/current_is_newest_version"
                 android:textColor="@color/white" />
 
         </LinearLayout>
@@ -285,7 +285,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/y26"
                 android:drawableStart="@mipmap/setting_back"
-                android:text="返回"
+                android:text="@string/back"
                 android:textColor="@color/white" />
         </LinearLayout>
 
