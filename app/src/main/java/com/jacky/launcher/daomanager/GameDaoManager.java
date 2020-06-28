@@ -42,9 +42,9 @@ public class GameDaoManager {
     /**
      * 会自动判定是插入还是替换
      */
-    public void insertOrReplaceByName(String name) {
+    public void insertOrReplaceByName(String name, String type) {
         try {
-            GameEntity mOldResponseBean = gameEntityDao.queryBuilder().where(GameEntityDao.Properties.Name.eq(name)).build().unique();//拿到之前的记录
+            GameEntity mOldResponseBean = gameEntityDao.queryBuilder().where(GameEntityDao.Properties.Name.eq(name), GameEntityDao.Properties.Type.eq(type)).build().unique();//拿到之前的记录
             if (mOldResponseBean != null) {
                 mOldResponseBean.setVisiable(0);
                 gameEntityDao.insertOrReplace(mOldResponseBean);

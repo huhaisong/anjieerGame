@@ -64,7 +64,7 @@ public class SearchGameUtil {
         }
     };
 
-    private static void getTfcardFileList(Game game, Context context) {
+    private static void getTfcardFileList(final Game game, final Context context) {
         long nowTime = System.currentTimeMillis();
         int j;
         String Name;
@@ -95,18 +95,30 @@ public class SearchGameUtil {
                 if (j > 0) {
                     Name = listFiles[i].substring(0, j);
                     if (!ARCBios.contains(Name)) {
-                        GameDaoManager.getInstance(context).insertOrReplaceByName(Name);
+                        final String finalName = Name;
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                GameDaoManager.getInstance(context).insertOrReplaceByName(finalName, game.getName());
+                            }
+                        }).start();
                     }
                 }
             }
         } else {
             for (int i = 0; i < listFiles.length; i++) {
                 if (listFiles[i].endsWith(game.getSuffix())) {
-                    Log.e(TAG, "getTfcardFileList: " + listFiles[i]);
                     j = listFiles[i].indexOf(game.getSuffix());
+                    Log.e(TAG, "getTfcardFileList: " + listFiles[i]);
                     if (j > 0) {
                         Name = listFiles[i].substring(0, j);
-                        GameDaoManager.getInstance(context).insertOrReplaceByName(Name);
+                        final String finalName1 = Name;
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                GameDaoManager.getInstance(context).insertOrReplaceByName(finalName1, game.getName());
+                            }
+                        }).start();
                     }
                 }
             }
